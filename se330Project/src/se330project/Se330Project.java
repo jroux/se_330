@@ -18,24 +18,51 @@ import javafx.stage.Stage;
  * @author jrrou
  */
 public class Se330Project extends Application {
+    int Time;
+    int wrkTemp;
     
     @Override
     public void start(Stage primaryStage) {
+        
+        //If user selects a 20min workout 
         Button btn = new Button();
-        btn.setText("Say 'Hello World'");
+        btn.setText("20 Minutes");
         btn.setOnAction(new EventHandler<ActionEvent>() {
             
             @Override
+
             public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
+                Time = 1;
+                System.out.println("Hello World!!");
+                System.out.println(Time);
             }
         });
         
+        //IF user selects a lift worjout
+        Button workout = new Button();
+        workout.setText("Lift");
+        workout.setOnAction(new EventHandler<ActionEvent>() {
+            
+            @Override
+            //If user selects a 20min workout 
+            public void handle(ActionEvent event) {
+                wrkTemp = 1;
+                System.out.println(wrkTemp);
+            }
+        });
+
+        
         StackPane root = new StackPane();
+        btn.setLayoutX(100);
+        btn.setLayoutY(200);
+        
         root.getChildren().add(btn);
+
+        root.getChildren().add(workout);
+
         
-        Scene scene = new Scene(root, 300, 250);
-        
+        Scene scene = new Scene(root, 500, 250);
+
         primaryStage.setTitle("Hello World!");
         primaryStage.setScene(scene);
         primaryStage.show();
