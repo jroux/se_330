@@ -41,6 +41,7 @@
             <fx:jar ...>
                 ...
             </fx:jar>
+
         </target>
 
     For more details about JavaFX SDK Ant tasks go to
@@ -50,4 +51,10 @@
     nbproject/build-impl.xml and nbproject/jfx-impl.xml.
 
     -->
+
+
+    <target name="-post-compile">  
+        <copy file="./READMEE.txt" todir="./dist"/>  
+    </target>
+
 </project>
