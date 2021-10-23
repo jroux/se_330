@@ -46,7 +46,7 @@ import javafx.scene.image.Image;
 public class homePageView{
     
     //creating buttons
-    Button btnTime20 = new Button("200 Minutes");
+    Button btnTime20 = new Button("20 Minutes");
     Button btnTime40 = new Button("40 Minutes");
     Button btnTypeLift = new Button("Lift");
     Button btnTypeCardio = new Button("Cardio");

@@ -92,7 +92,6 @@ public class Se330Project extends Application {
 
         
         //Button for 20 minute workout
-        //Button btnTime20 = new Button("20 Minutes");
         view.getbtnTime20().setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -104,8 +103,7 @@ public class Se330Project extends Application {
         });
         
         //Button for 40 minute workout 
-        Button btnTime40 = new Button("40 Minutes");
-        btnTime40.setOnAction(new EventHandler<ActionEvent>() {
+        view.getbtnTime40().setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 Time = 40;
@@ -115,8 +113,7 @@ public class Se330Project extends Application {
         });
         
         //Button for cardio workout
-        Button btnTypeCardio = new Button("Cardio");
-        btnTypeCardio.setOnAction(new EventHandler<ActionEvent>() {  
+        view.getbtnTypeCardio().setOnAction(new EventHandler<ActionEvent>() {  
             @Override
             public void handle(ActionEvent event) {
                 wrkTemp = 1;
@@ -125,8 +122,7 @@ public class Se330Project extends Application {
         });
         
         //Button for lift workout
-        Button btnTypeLift = new Button("Lift");
-        btnTypeLift.setOnAction(new EventHandler<ActionEvent>() {          
+        view.getbtnTypeLift().setOnAction(new EventHandler<ActionEvent>() {          
             @Override
             public void handle(ActionEvent event) {
                 wrkTemp = 2;
@@ -135,8 +131,7 @@ public class Se330Project extends Application {
         });
         
         //Button for body weight workout
-        Button btnEqpBody = new Button("Body weight");
-        btnEqpBody.setOnAction(new EventHandler<ActionEvent>() {
+        view.getbtnEqpBody().setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 equip = 1;
@@ -145,8 +140,7 @@ public class Se330Project extends Application {
         });
         
         //Button for gym workout
-        Button btnEqpGym = new Button("Gym");
-        btnEqpGym.setOnAction(new EventHandler<ActionEvent>() {       
+        view.getbtnEqpGym().setOnAction(new EventHandler<ActionEvent>() {       
             @Override
             public void handle(ActionEvent event) {
                 equip = 2;
@@ -239,11 +233,11 @@ public class Se330Project extends Application {
         
         //Adding buttons to gridpane
         root.add(view.getbtnTime20(), 0, 0, 1, 1);
-        root.add(btnTime40, 1, 0, 1, 1);
-        root.add(btnTypeCardio, 1, 1, 1, 1);  
-        root.add(btnTypeLift, 0, 1, 1, 1);
-        root.add(btnEqpBody, 1, 2, 1, 1);
-        root.add(btnEqpGym, 0, 2, 1, 1);
+        root.add(view.getbtnTime40(), 1, 0, 1, 1);
+        root.add(view.getbtnTypeCardio(), 1, 1, 1, 1);  
+        root.add(view.getbtnTypeLift(), 0, 1, 1, 1);
+        root.add(view.getbtnEqpBody(), 1, 2, 1, 1);
+        root.add(view.getbtnEqpGym(), 0, 2, 1, 1);
 
         //creating scene
         Scene scene = new Scene(root, 240, 100);
