@@ -150,9 +150,9 @@ public class Se330Project extends Application {
         });
         
         //logic
-        Time = 20; 
+        Time = 40; 
         wrkTemp = 2;
-        equip = 2;
+        equip = 1;
         
         Collections.shuffle(BWExercises);
         Collections.shuffle(GymExercises);
@@ -161,19 +161,20 @@ public class Se330Project extends Application {
             numEx = 2; 
             if (wrkTemp == 1){ //cardio
                 System.out.println("Run");
-            }else if (wrkTemp == 2){ //lift
+            }
+            if (wrkTemp == 2){ //lift
                 if (equip == 1){//bodyweight
                     //choose ex from bodyweight list
+                    int index = 0;
                     while (createdWorkout.size() < numEx){
-                        int index = 0;
                         createdWorkout.add(BWExercises.get(index));
                         ++index;
                         System.out.println(createdWorkout);
                     }
                 }else if (equip == 2){ //gym
                     //choose ex from gym list
+                    int index = 0;
                     while (createdWorkout.size() < numEx){
-                        int index = 0;
                         createdWorkout.add(GymExercises.get(index));
                         index++;
                         System.out.println(createdWorkout);
@@ -188,16 +189,16 @@ public class Se330Project extends Application {
             }else if (wrkTemp == 2){ //lift
                 if (equip == 1){//bodyweight
                     //choose ex from bodyweight list
+                    int index = 0;
                     while (createdWorkout.size() < numEx){
-                        int index = 0;
                         createdWorkout.add(BWExercises.get(index));
                         index++;
                         System.out.println(createdWorkout);
                     }
                 }else if (equip == 2){ //gym
                     //choose ex from gym list
+                    int index = 0;
                     while (createdWorkout.size() < numEx){
-                        int index = 0;
                         createdWorkout.add(GymExercises.get(index));
                         index++;
                         System.out.println(createdWorkout);
