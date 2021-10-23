@@ -18,24 +18,25 @@ import javafx.stage.Stage;
  *
  * @author jrrou
  */
-public class workoutController{
-    int time = 0;
-    int wrkTemp;
-    workoutModel model;
-    
-    public workoutController(homePageView view){
-        setView(view);
-    }
-    
-    public void setView(homePageView view){
-        view.getTimeButton20().setOnAction(new EventHandler<ActionEvent>() {
-            public void handle(ActionEvent event) {
-                time = 1;
-                System.out.println(time);
-            }   
-        });
-    }
-}
+//public class workoutController{
+//    int time = 0;
+//    int wrkTemp;
+//    workoutModel model;
+//    
+//    public workoutController(homePageView view){
+//        setView(view);
+//    }
+//    
+//    public void setView(homePageView view){
+//        view.getTimeButton20().setOnAction(new EventHandler<ActionEvent>() {
+//            public void handle(ActionEvent event) {
+//                time = 1;
+//                System.out.println(time);
+//            }   
+//        });
+//    }
+//    
+//}
 //    
 //    @Override
 //    public void start(Stage primaryStage) {

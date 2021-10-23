@@ -5,14 +5,18 @@
  */
 package se330project.Models;
 
+import se330project.Se330Project;
+import se330project.Controllers.workoutController;
+import se330project.Views.homePageView;
+
 /**
  *
 // * @author jrrou
 // */
 public class workoutModel {
-    private int time;
-    private String type;
-    private String equipment;
+    private int time = 0;
+    private String type = "";
+    private String equipment = "";
     
     public int getTime(){
         return time;
@@ -22,22 +26,22 @@ public class workoutModel {
         this.time = time;
     }
     
-//    public String getType(){
-//    return type;
-//    }
-//    
-//    public void setType(String type){
-//        this.type = type;
-//    }
-//    
-//    
-//    public String getEquipment(){
-//    return equipment;
-//    }
-//    
-//    public void setEquipment(String equipment){
-//        this.equipment = equipment;
-//    }
+    public String getType(){
+        return type;
+    }
+    
+    public void setType(String type){
+        this.type = type;
+    }
+    
+    
+    public String getEquipment(){
+        return equipment;
+    }
+    
+    public void setEquipment(String equipment){
+        this.equipment = equipment;
+    }
 }
 
 //import javafx.beans.property.*;
