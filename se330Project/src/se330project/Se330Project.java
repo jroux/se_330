@@ -77,12 +77,15 @@ public class Se330Project extends Application {
         BWExercises.add("calf raises");
         BWExercises.add("pulsing squats");
         
+        //Gym exercises list
         ArrayList<String> GymExercises = new ArrayList<String>(); 
         GymExercises.add("machine 1");
         GymExercises.add("machine 2");
         GymExercises.add("machine 3");
         GymExercises.add("machine 4");
         GymExercises.add("machine 5");
+        
+        //New created workout list
         ArrayList<String> createdWorkout = new ArrayList<String>(); 
 
         
@@ -149,60 +152,63 @@ public class Se330Project extends Application {
             }
         });
         
-        //logic
+//-----------------LOGIC-----------------------------
         Time = 40; 
         wrkTemp = 2;
         equip = 1;
         
+        //Shuffle exercises to mix up order
         Collections.shuffle(BWExercises);
         Collections.shuffle(GymExercises);
         
+        //20 MIN WORKOUT
         if (Time == 20){
             numEx = 2; 
-            if (wrkTemp == 1){ //cardio
+            if (wrkTemp == 1){ //CARDIO
                 System.out.println("Run");
             }
-            if (wrkTemp == 2){ //lift
-                if (equip == 1){//bodyweight
-                    //choose ex from bodyweight list
+            if (wrkTemp == 2){ //LIFT
+                if (equip == 1){//BODY WEIGHT
+                    //choose exercises from body weight list
                     int index = 0;
                     while (createdWorkout.size() < numEx){
                         createdWorkout.add(BWExercises.get(index));
                         ++index;
-                        System.out.println(createdWorkout);
                     }
-                }else if (equip == 2){ //gym
-                    //choose ex from gym list
+                    System.out.println(createdWorkout);
+                }else if (equip == 2){ //GYM
+                    //choose exercises from gym list
                     int index = 0;
                     while (createdWorkout.size() < numEx){
                         createdWorkout.add(GymExercises.get(index));
                         index++;
-                        System.out.println(createdWorkout);
                     }
+                    System.out.println(createdWorkout);
                 }
             }
         }
+        //40 MIN WORKOUT
         if (Time == 40){
             numEx = 3;
-            if (wrkTemp == 1){ //cardio
+            if (wrkTemp == 1){ //CARDIO
                 System.out.println("Run");
-            }else if (wrkTemp == 2){ //lift
-                if (equip == 1){//bodyweight
-                    //choose ex from bodyweight list
+            }else if (wrkTemp == 2){ //LIFT
+                if (equip == 1){// BODY WEIGHT
+                    //choose exercises from bodyweight list
                     int index = 0;
                     while (createdWorkout.size() < numEx){
                         createdWorkout.add(BWExercises.get(index));
                         index++;
-                        System.out.println(createdWorkout);
                     }
-                }else if (equip == 2){ //gym
-                    //choose ex from gym list
+                    System.out.println(createdWorkout);
+                }else if (equip == 2){ //GYM
+                    //choose exercises from gym list
                     int index = 0;
                     while (createdWorkout.size() < numEx){
                         createdWorkout.add(GymExercises.get(index));
                         index++;
-                        System.out.println(createdWorkout);
                     }
+                    System.out.println(createdWorkout);
                 }
             }
         }
