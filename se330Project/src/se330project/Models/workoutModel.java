@@ -6,41 +6,39 @@
 package se330project.Models;
 
 import se330project.Se330Project;
-import se330project.Controllers.workoutController;
-import se330project.Views.homePageView;
 
 /**
  *
 // * @author jrrou
 // */
 public class workoutModel {
-    private int time = 0;
-    private String type = "";
-    private String equipment = "";
+    int Time = 0;
+    int equip = 0;
+    int wrkTemp = 0;
     
     public int getTime(){
-        return time;
+        return Time;
     }
     
-    public void setTime(int time){
-        this.time = time;
+    public void setTime(int Time){
+        this.Time = Time;
     }
     
-    public String getType(){
-        return type;
+    public int getWrkTemp(){
+        return wrkTemp;
     }
     
-    public void setType(String type){
-        this.type = type;
+    public void setWrkTemp(int wrkTemp){
+        this.wrkTemp = wrkTemp;
     }
     
     
-    public String getEquipment(){
-        return equipment;
+    public int getEquip(){
+        return equip;
     }
     
-    public void setEquipment(String equipment){
-        this.equipment = equipment;
+    public void setEquip(int equipment){
+        this.equip = equip;
     }
 }
 

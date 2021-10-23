@@ -5,6 +5,7 @@
  */
 package se330project;
 import se330project.Models.workoutModel;
+import se330project.Views.homePageView;
 //import se330project.Views.homePageView;
 //import se330project.Controllers.workoutController;
 
@@ -57,17 +58,18 @@ public class Se330Project extends Application {
     
     //Variables that will hold time, type and equipment of the workout
     int Time = 0;
-    int numEx = 0;
-    int wrkTemp = 0;
-    String type = "";
     int equip = 0;
+    int wrkTemp = 0;
+    int numEx = 0;
     String word = "";
-    boolean checkTime20 = false;
-    boolean checkTime40 = false;
+    //boolean checkTime20 = false;
+    //boolean checkTime40 = false;
 
     
     @Override
     public void start(Stage primaryStage) {
+        
+        homePageView view = new homePageView();
         
         //Body weight exercises list
         ArrayList<String> BWExercises = new ArrayList<String>(); 
@@ -90,14 +92,14 @@ public class Se330Project extends Application {
 
         
         //Button for 20 minute workout
-        Button btnTime20 = new Button("20 Minutes");
-        btnTime20.setOnAction(new EventHandler<ActionEvent>() {
+        //Button btnTime20 = new Button("20 Minutes");
+        view.getbtnTime20().setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 Time = 20;
                 System.out.println("Hello World!!");
                 System.out.println(Time);
-                checkTime20 = true;
+                //checkTime20 = true;
             }
         });
         
@@ -107,7 +109,7 @@ public class Se330Project extends Application {
             @Override
             public void handle(ActionEvent event) {
                 Time = 40;
-                checkTime40 = true;
+                //checkTime40 = true;
                 System.out.println(Time);
             }
         });
@@ -236,7 +238,7 @@ public class Se330Project extends Application {
         root.setVgap(20);
         
         //Adding buttons to gridpane
-        root.add(btnTime20, 0, 0, 1, 1);
+        root.add(view.getbtnTime20(), 0, 0, 1, 1);
         root.add(btnTime40, 1, 0, 1, 1);
         root.add(btnTypeCardio, 1, 1, 1, 1);  
         root.add(btnTypeLift, 0, 1, 1, 1);
@@ -265,9 +267,9 @@ public class Se330Project extends Application {
         }
     }
     
-    public String getType(){
-        return type;
-    }
+//    public String getType(){
+//        return type;
+//    }
     
     public int getEquip(){
         return equip;

@@ -38,13 +38,52 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.scene.image.Image;    
-
 /**
  *
  * @author jrrou
  */
 
-//public class homePageView{
+public class homePageView{
+    
+    //creating buttons
+    Button btnTime20 = new Button("200 Minutes");
+    Button btnTime40 = new Button("40 Minutes");
+    Button btnTypeLift = new Button("Lift");
+    Button btnTypeCardio = new Button("Cardio");
+    Button btnEqpBody = new Button("Body weight");
+    Button btnEqpGym = new Button("Gym");
+    
+    //Getters for buttons
+    public Button getbtnTime20() {
+        return btnTime20;
+    }
+    
+    public Button getbtnTime40() {
+        return btnTime40;
+    }
+    
+    public Button getbtnTypeLift() {
+        return btnTypeLift;
+    }
+    
+    public Button getbtnTypeCardio() {
+        return btnTypeCardio;
+    }
+    
+    public Button getbtnEqpBody() {
+        return btnEqpBody;
+    }
+    
+    public Button getbtnEqpGym() {
+        return btnEqpGym;
+    }
+    
+        
+
+    
+    
+    
+}
 //        StackPane root = new StackPane();
 //
 //        Scene scene = new Scene(root, 500, 250);
