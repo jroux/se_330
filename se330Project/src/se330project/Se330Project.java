@@ -5,8 +5,8 @@
  */
 package se330project;
 import se330project.Models.workoutModel;
-import se330project.Views.homePageView;
-import se330project.Controllers.workoutController;
+//import se330project.Views.homePageView;
+//import se330project.Controllers.workoutController;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -16,6 +16,10 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.scene.image.Image;
+import javafx.scene.layout.GridPane;
+import java.util.ArrayList;
+import java.util.Collections;
+
 
 
 
@@ -50,10 +54,13 @@ import javafx.scene.image.Image;
  * @author jrrou
  */
 public class Se330Project extends Application {
+    
+    //Variables that will hold time, type and equipment of the workout
     int Time = 0;
+    int numEx = 0;
     int wrkTemp = 0;
     String type = "";
-    String equip = "";
+    int equip = 0;
     String word = "";
     boolean checkTime20 = false;
     boolean checkTime40 = false;
@@ -62,13 +69,27 @@ public class Se330Project extends Application {
     @Override
     public void start(Stage primaryStage) {
         
-        //If user selects a 20min workout 
-        Button btnTime20 = new Button("20 Minutes");
-        //btn.setText("20 Minutes");
-        btnTime20.setOnAction(new EventHandler<ActionEvent>() {
-            
-            @Override
+        //Body weight exercises list
+        ArrayList<String> BWExercises = new ArrayList<String>(); 
+        BWExercises.add("push ups");
+        BWExercises.add("squats");
+        BWExercises.add("pull ups");
+        BWExercises.add("calf raises");
+        BWExercises.add("pulsing squats");
+        
+        ArrayList<String> GymExercises = new ArrayList<String>(); 
+        GymExercises.add("machine 1");
+        GymExercises.add("machine 2");
+        GymExercises.add("machine 3");
+        GymExercises.add("machine 4");
+        GymExercises.add("machine 5");
+        ArrayList<String> createdWorkout = new ArrayList<String>(); 
 
+        
+        //Button for 20 minute workout
+        Button btnTime20 = new Button("20 Minutes");
+        btnTime20.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
             public void handle(ActionEvent event) {
                 Time = 20;
                 System.out.println("Hello World!!");
@@ -77,13 +98,10 @@ public class Se330Project extends Application {
             }
         });
         
-        //If user selects a 20min workout 
+        //Button for 40 minute workout 
         Button btnTime40 = new Button("40 Minutes");
-//        btn.setText("200 Minutes");
         btnTime40.setOnAction(new EventHandler<ActionEvent>() {
-            
             @Override
-
             public void handle(ActionEvent event) {
                 Time = 40;
                 checkTime40 = true;
@@ -91,91 +109,141 @@ public class Se330Project extends Application {
             }
         });
         
-//        //IF user selects a lift worjout
-//        Button workout = new Button();
-//        workout.setText("Lift");
-//        workout.setOnAction(new EventHandler<ActionEvent>() {
-//            
-//            @Override
-//            //If user selects a 20min workout 
-//            public void handle(ActionEvent event) {
-//                wrkTemp = 1;
-//                System.out.println(wrkTemp);
-//            }
-//        });
+        //Button for cardio workout
+        Button btnTypeCardio = new Button("Cardio");
+        btnTypeCardio.setOnAction(new EventHandler<ActionEvent>() {  
+            @Override
+            public void handle(ActionEvent event) {
+                wrkTemp = 1;
+                System.out.println(wrkTemp);
+            }
+        });
         
-//        //IF user selects a lift worjout
-//        Button cardio = new Button();
-//        workout.setText("Cardio");
-//        workout.setOnAction(new EventHandler<ActionEvent>() {
-//            
-//            @Override
-//            //If user selects a 20min workout 
-//            public void handle(ActionEvent event) {
-//                wrkTemp = 2;
-//                System.out.println(wrkTemp);
-//            }
-//        });
+        //Button for lift workout
+        Button btnTypeLift = new Button("Lift");
+        btnTypeLift.setOnAction(new EventHandler<ActionEvent>() {          
+            @Override
+            public void handle(ActionEvent event) {
+                wrkTemp = 2;
+                System.out.println(wrkTemp);
+            }
+        });
         
-//        //IF user selects a 40 min worjout
-//        Button time40 = new Button();
-//        workout.setText("40 Minutes");
-//        workout.setOnAction(new EventHandler<ActionEvent>() {
-//            
-//            @Override
-//            //If user selects a 20min workout 
-//            public void handle(ActionEvent event) {
-//                Time = 40;
-//                time40.setDisable(false);
-//                System.out.println(Time);
-//            }
-//        });
-
-        System.out.println(checkTime20);
-        System.out.println(checkTime40);
+        //Button for body weight workout
+        Button btnEqpBody = new Button("Body weight");
+        btnEqpBody.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                equip = 1;
+                System.out.println(equip);
+            }
+        });
         
-        if (checkTime20 == true){
-            System.out.println("made it");
-            btnTime40.setDisable(true);
-        }else{
-            System.out.println("made it2");
-            btnTime40.setDisable(false);
+        //Button for gym workout
+        Button btnEqpGym = new Button("Gym");
+        btnEqpGym.setOnAction(new EventHandler<ActionEvent>() {       
+            @Override
+            public void handle(ActionEvent event) {
+                equip = 2;
+                System.out.println(equip);
+            }
+        });
+        
+        //logic
+        Time = 20; 
+        wrkTemp = 2;
+        equip = 2;
+        
+        Collections.shuffle(BWExercises);
+        Collections.shuffle(GymExercises);
+        
+        if (Time == 20){
+            numEx = 2; 
+            if (wrkTemp == 1){ //cardio
+                System.out.println("Run");
+            }else if (wrkTemp == 2){ //lift
+                if (equip == 1){//bodyweight
+                    //choose ex from bodyweight list
+                    while (createdWorkout.size() < numEx){
+                        int index = 0;
+                        createdWorkout.add(BWExercises.get(index));
+                        ++index;
+                        System.out.println(createdWorkout);
+                    }
+                }else if (equip == 2){ //gym
+                    //choose ex from gym list
+                    while (createdWorkout.size() < numEx){
+                        int index = 0;
+                        createdWorkout.add(GymExercises.get(index));
+                        index++;
+                        System.out.println(createdWorkout);
+                    }
+                }
+            }
+        }
+        if (Time == 40){
+            numEx = 3;
+            if (wrkTemp == 1){ //cardio
+                System.out.println("Run");
+            }else if (wrkTemp == 2){ //lift
+                if (equip == 1){//bodyweight
+                    //choose ex from bodyweight list
+                    while (createdWorkout.size() < numEx){
+                        int index = 0;
+                        createdWorkout.add(BWExercises.get(index));
+                        index++;
+                        System.out.println(createdWorkout);
+                    }
+                }else if (equip == 2){ //gym
+                    //choose ex from gym list
+                    while (createdWorkout.size() < numEx){
+                        int index = 0;
+                        createdWorkout.add(GymExercises.get(index));
+                        index++;
+                        System.out.println(createdWorkout);
+                    }
+                }
+            }
         }
         
-        if (checkTime40 == true){
-            System.out.println("made i3t");
-            btnTime20.setDisable(true);
-        }else{
-            System.out.println("made i4t");
-            btnTime20.setDisable(false);
-        }
-        
-        StackPane root = new StackPane();
-        
-//        time40.setTranslateX(40);
-//        time40.setTranslateY(40);
-        btnTime40.setTranslateX(10);
-        btnTime40.setTranslateY(10);
-        btnTime20.setTranslateX(70);
-        btnTime20.setTranslateY(70);
-//        cardio.setTranslateX(100);
-//        cardio.setTranslateY(100);
+//Code for disabling buttons after clicks
+//        if (checkTime20 == true){
+//            System.out.println("made it");
+//            btnTime40.setDisable(true);
+//        }else{
+//            System.out.println("made it2");
+//            btnTime40.setDisable(false);
+//        }
 //        
-        root.getChildren().add(btnTime20);
-        root.getChildren().add(btnTime40);
-//        root.getChildren().add(cardio);
-//        root.getChildren().add(workout);
-//        root.getChildren().add(time40);
-
+//        if (checkTime40 == true){
+//            System.out.println("made i3t");
+//            btnTime20.setDisable(true);
+//        }else{
+//            System.out.println("made i4t");
+//            btnTime20.setDisable(false);
+//        }
         
-        Scene scene = new Scene(root, 500, 250);
+        //creating gridpane
+        GridPane root = new GridPane();
+        root.setHgap(20);
+        root.setVgap(20);
+        
+        //Adding buttons to gridpane
+        root.add(btnTime20, 0, 0, 1, 1);
+        root.add(btnTime40, 1, 0, 1, 1);
+        root.add(btnTypeCardio, 1, 1, 1, 1);  
+        root.add(btnTypeLift, 0, 1, 1, 1);
+        root.add(btnEqpBody, 1, 2, 1, 1);
+        root.add(btnEqpGym, 0, 2, 1, 1);
 
-        primaryStage.setTitle("Hello World!");
+        //creating scene
+        Scene scene = new Scene(root, 240, 100);
+        primaryStage.setTitle("workIT");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
     
-    
+   
     
     public static int addNums(int a, int b){
         return a + b;
@@ -194,7 +262,7 @@ public class Se330Project extends Application {
         return type;
     }
     
-    public String getEquip(){
+    public int getEquip(){
         return equip;
     }
     
