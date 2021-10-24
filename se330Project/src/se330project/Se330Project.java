@@ -152,7 +152,7 @@ public class Se330Project extends Application {
 //-----------------LOGIC-----------------------------
         Time = 20; 
         wrkTemp = 2;
-        equip = 1;
+        equip = 2;
         
         //Shuffle exercises to mix up order
         Collections.shuffle(BWExercises);
@@ -168,13 +168,7 @@ public class Se330Project extends Application {
                 if (equip == 1){//BODY WEIGHT
                     bodyWeightWorkout(Time, createdWorkout, BWExercises);
                 }else if (equip == 2){ //GYM
-                    //choose exercises from gym list
-                    int index = 0;
-                    while (createdWorkout.size() < numEx){
-                        createdWorkout.add(GymExercises.get(index));
-                        index++;
-                    }
-                    System.out.println(createdWorkout);
+                    gymWorkout(Time, createdWorkout, GymExercises);
                 }
             }
         }
@@ -187,13 +181,7 @@ public class Se330Project extends Application {
                 if (equip == 1){// BODY WEIGHT
                     bodyWeightWorkout(Time, createdWorkout, BWExercises);
                 }else if (equip == 2){ //GYM
-                    //choose exercises from gym list
-                    int index = 0;
-                    while (createdWorkout.size() < numEx){
-                        createdWorkout.add(GymExercises.get(index));
-                        index++;
-                    }
-                    System.out.println(createdWorkout);
+                    gymWorkout(Time, createdWorkout, GymExercises);
                 }
             }
         }
@@ -261,6 +249,27 @@ public class Se330Project extends Application {
             //choose exercises from body weight list
             while (createdWorkout.size() < numEx){
                 createdWorkout.add(BWExercises.get(index));
+                index++;
+            }                 
+        }
+        System.out.println(createdWorkout);
+        return (createdWorkout);
+    }
+    
+    public ArrayList<String> gymWorkout(int Time, ArrayList<String> createdWorkout, ArrayList<String> GymExercises){
+        if (Time == 20){
+            int index = 0;
+            //choose exercises from gym list
+            while (createdWorkout.size() < numEx){
+                createdWorkout.add(GymExercises.get(index));
+                index++;
+            } 
+        }
+        if (Time == 40){
+            int index = 0;
+            //choose exercises from gym list
+            while (createdWorkout.size() < numEx){
+                createdWorkout.add(GymExercises.get(index));
                 index++;
             }                 
         }
