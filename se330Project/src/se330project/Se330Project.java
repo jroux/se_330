@@ -64,8 +64,6 @@ public class Se330Project extends Application {
     String word = "";
     String workout = "";
     boolean clickCheck = false;
-    //boolean checkTime20 = false;
-    //boolean checkTime40 = false;
 
     
     @Override
@@ -91,6 +89,10 @@ public class Se330Project extends Application {
         
         //New created workout list
         ArrayList<String> createdWorkout = new ArrayList<String>(); 
+        
+        //Shuffle exercises to mix up order
+        Collections.shuffle(BWExercises);
+        Collections.shuffle(GymExercises);
 
         
         //Button for 20 minute workout
@@ -98,9 +100,6 @@ public class Se330Project extends Application {
             @Override
             public void handle(ActionEvent event) {
                 Time = 20;
-                System.out.println("Hello World!!");
-                System.out.println(Time);
-                //checkTime20 = true;
                 clickCheck = true;
                 disableButton(clickCheck, view.getbtnTime40());
             }
@@ -111,8 +110,6 @@ public class Se330Project extends Application {
             @Override
             public void handle(ActionEvent event) {
                 Time = 40;
-                //checkTime40 = true;
-                System.out.println(Time);
                 clickCheck = true;
                 disableButton(clickCheck, view.getbtnTime20());
             }
@@ -123,7 +120,6 @@ public class Se330Project extends Application {
             @Override
             public void handle(ActionEvent event) {
                 wrkTemp = 1;
-                System.out.println(wrkTemp);
                 clickCheck = true;
                 disableButton(clickCheck, view.getbtnTypeLift());
             }
@@ -134,7 +130,6 @@ public class Se330Project extends Application {
             @Override
             public void handle(ActionEvent event) {
                 wrkTemp = 2;
-                System.out.println(wrkTemp);
                 clickCheck = true;
                 disableButton(clickCheck, view.getbtnTypeCardio());
             }
@@ -145,7 +140,6 @@ public class Se330Project extends Application {
             @Override
             public void handle(ActionEvent event) {
                 equip = 1;
-                System.out.println(equip);
                 clickCheck = true;
                 disableButton(clickCheck, view.getbtnEqpGym());
             }
@@ -156,65 +150,43 @@ public class Se330Project extends Application {
             @Override
             public void handle(ActionEvent event) {
                 equip = 2;
-                System.out.println(equip);
                 clickCheck = true;
                 disableButton(clickCheck, view.getbtnEqpBody());
             }
         });
         
-//-----------------LOGIC-----------------------------
-        Time = 20; 
-        wrkTemp = 2;
-        equip = 1;
-        
-        //Shuffle exercises to mix up order
-        Collections.shuffle(BWExercises);
-        Collections.shuffle(GymExercises);
-        
-        //20 MIN WORKOUT
-        if (Time == 20){
-            numEx = 2; 
-            if (wrkTemp == 1){ //CARDIO
-                cardioWorkout(Time);
-            }
-            if (wrkTemp == 2){ //LIFT
-                if (equip == 1){//body weight
-                    bodyWeightWorkout(Time, createdWorkout, BWExercises);
+        //Button to generate workout
+        view.getbtnGenerate().setOnAction(new EventHandler<ActionEvent>() {       
+            @Override
+            public void handle(ActionEvent event) {
+                if (Time == 20){
+                    numEx = 2; 
+                if (wrkTemp == 1){ //CARDIO
+                    cardioWorkout(Time);
+                }
+                if (wrkTemp == 2){ //LIFT
+                    if (equip == 1){//body weight
+                        bodyWeightWorkout(Time, createdWorkout, BWExercises);
                 }else if (equip == 2){ //gym
                     gymWorkout(Time, createdWorkout, GymExercises);
+                    }
+                }
+                }
+                //40 MIN WORKOUT
+                if (Time == 40){
+                    numEx = 3;
+                if (wrkTemp == 1){ //CARDIO
+                    cardioWorkout(Time);
+                }else if (wrkTemp == 2){ //LIFT
+                    if (equip == 1){//body weight
+                        bodyWeightWorkout(Time, createdWorkout, BWExercises);
+                    }else if (equip == 2){ //gym
+                        gymWorkout(Time, createdWorkout, GymExercises);
+                    }
+                }
                 }
             }
-        }
-        //40 MIN WORKOUT
-        if (Time == 40){
-            numEx = 3;
-            if (wrkTemp == 1){ //CARDIO
-                cardioWorkout(Time);
-            }else if (wrkTemp == 2){ //LIFT
-                if (equip == 1){//body weight
-                    bodyWeightWorkout(Time, createdWorkout, BWExercises);
-                }else if (equip == 2){ //gym
-                    gymWorkout(Time, createdWorkout, GymExercises);
-                }
-            }
-        }
-        
-//Code for disabling buttons after clicks
-//        if (checkTime20 == true){
-//            System.out.println("made it");
-//            btnTime40.setDisable(true);
-//        }else{
-//            System.out.println("made it2");
-//            btnTime40.setDisable(false);
-//        }
-//        
-//        if (checkTime40 == true){
-//            System.out.println("made i3t");
-//            btnTime20.setDisable(true);
-//        }else{
-//            System.out.println("made i4t");
-//            btnTime20.setDisable(false);
-//        }
+        });
         
         //creating gridpane
         GridPane root = new GridPane();
@@ -228,6 +200,7 @@ public class Se330Project extends Application {
         root.add(view.getbtnTypeLift(), 0, 1, 1, 1);
         root.add(view.getbtnEqpBody(), 1, 2, 1, 1);
         root.add(view.getbtnEqpGym(), 0, 2, 1, 1);
+        root.add(view.getbtnGenerate(), 0, 3, 1, 1);
 
         //creating scene
         Scene scene = new Scene(root, 240, 100);

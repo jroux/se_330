@@ -52,8 +52,13 @@ public class homePageView{
     Button btnTypeCardio = new Button("Cardio");
     Button btnEqpBody = new Button("Body weight");
     Button btnEqpGym = new Button("Gym");
+    Button btnGenerate = new Button ("GO");
     
     //Getters for buttons
+    public Button getbtnGenerate() {
+        return btnGenerate;
+    }
+    
     public Button getbtnTime20() {
         return btnTime20;
     }
