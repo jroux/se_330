@@ -151,7 +151,7 @@ public class Se330Project extends Application {
         
 //-----------------LOGIC-----------------------------
         Time = 20; 
-        wrkTemp = 1;
+        wrkTemp = 2;
         equip = 1;
         
         //Shuffle exercises to mix up order
@@ -162,18 +162,11 @@ public class Se330Project extends Application {
         if (Time == 20){
             numEx = 2; 
             if (wrkTemp == 1){ //CARDIO
-                //System.out.println("Run");
                 cardioWorkout(Time);
             }
             if (wrkTemp == 2){ //LIFT
                 if (equip == 1){//BODY WEIGHT
-                    //choose exercises from body weight list
-                    int index = 0;
-                    while (createdWorkout.size() < numEx){
-                        createdWorkout.add(BWExercises.get(index));
-                        ++index;
-                    }
-                    System.out.println(createdWorkout);
+                    bodyWeightWorkout(Time, createdWorkout, BWExercises);
                 }else if (equip == 2){ //GYM
                     //choose exercises from gym list
                     int index = 0;
@@ -189,16 +182,10 @@ public class Se330Project extends Application {
         if (Time == 40){
             numEx = 3;
             if (wrkTemp == 1){ //CARDIO
-                System.out.println("Run");
+                cardioWorkout(Time);
             }else if (wrkTemp == 2){ //LIFT
                 if (equip == 1){// BODY WEIGHT
-                    //choose exercises from bodyweight list
-                    int index = 0;
-                    while (createdWorkout.size() < numEx){
-                        createdWorkout.add(BWExercises.get(index));
-                        index++;
-                    }
-                    System.out.println(createdWorkout);
+                    bodyWeightWorkout(Time, createdWorkout, BWExercises);
                 }else if (equip == 2){ //GYM
                     //choose exercises from gym list
                     int index = 0;
@@ -248,7 +235,7 @@ public class Se330Project extends Application {
         primaryStage.show();
     }
     
-   
+ //METHODS FOR LOGIC------------------------------------------------------
     public String cardioWorkout(int Time){
         if (Time == 20){
             workout = "Go for a 20 minute run outside.";
@@ -256,9 +243,29 @@ public class Se330Project extends Application {
         if (Time == 40){
             workout = "Go for a 40 minute run outside.";
         }
-        System.out.println("printing workout:");
         System.out.println(workout);
         return workout;
+    }
+    
+    public ArrayList<String> bodyWeightWorkout(int Time, ArrayList<String> createdWorkout, ArrayList<String> BWExercises){
+        if (Time == 20){
+            int index = 0;
+            //choose exercises from body weight list
+            while (createdWorkout.size() < numEx){
+                createdWorkout.add(BWExercises.get(index));
+                index++;
+            } 
+        }
+        if (Time == 40){
+            int index = 0;
+            //choose exercises from body weight list
+            while (createdWorkout.size() < numEx){
+                createdWorkout.add(BWExercises.get(index));
+                index++;
+            }                 
+        }
+        System.out.println(createdWorkout);
+        return (createdWorkout);
     }
     
     public static int addNums(int a, int b){
