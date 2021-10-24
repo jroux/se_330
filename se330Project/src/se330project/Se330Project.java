@@ -62,6 +62,7 @@ public class Se330Project extends Application {
     int wrkTemp = 0;
     int numEx = 0;
     String word = "";
+    String workout = "";
     //boolean checkTime20 = false;
     //boolean checkTime40 = false;
 
@@ -149,8 +150,8 @@ public class Se330Project extends Application {
         });
         
 //-----------------LOGIC-----------------------------
-        Time = 40; 
-        wrkTemp = 2;
+        Time = 20; 
+        wrkTemp = 1;
         equip = 1;
         
         //Shuffle exercises to mix up order
@@ -161,7 +162,8 @@ public class Se330Project extends Application {
         if (Time == 20){
             numEx = 2; 
             if (wrkTemp == 1){ //CARDIO
-                System.out.println("Run");
+                //System.out.println("Run");
+                cardioWorkout(Time);
             }
             if (wrkTemp == 2){ //LIFT
                 if (equip == 1){//BODY WEIGHT
@@ -247,6 +249,17 @@ public class Se330Project extends Application {
     }
     
    
+    public String cardioWorkout(int Time){
+        if (Time == 20){
+            workout = "Go for a 20 minute run outside.";
+        }
+        if (Time == 40){
+            workout = "Go for a 40 minute run outside.";
+        }
+        System.out.println("printing workout:");
+        System.out.println(workout);
+        return workout;
+    }
     
     public static int addNums(int a, int b){
         return a + b;
@@ -279,7 +292,6 @@ public class Se330Project extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
         
         launch(args);
     }
