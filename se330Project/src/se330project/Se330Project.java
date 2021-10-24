@@ -63,6 +63,7 @@ public class Se330Project extends Application {
     int numEx = 0;
     String word = "";
     String workout = "";
+    boolean clickCheck = false;
     //boolean checkTime20 = false;
     //boolean checkTime40 = false;
 
@@ -100,6 +101,8 @@ public class Se330Project extends Application {
                 System.out.println("Hello World!!");
                 System.out.println(Time);
                 //checkTime20 = true;
+                clickCheck = true;
+                disableButton(clickCheck, view.getbtnTime40());
             }
         });
         
@@ -275,6 +278,13 @@ public class Se330Project extends Application {
         }
         System.out.println(createdWorkout);
         return (createdWorkout);
+    }
+    
+    public Button disableButton(Boolean clickCheck, Button btn){
+        if (clickCheck = true){
+            btn.setDisable(true);
+        }
+        return btn;
     }
     
     public static int addNums(int a, int b){
