@@ -112,9 +112,9 @@ public class Se330ProjectTest {
     public void testGetType() {
         System.out.println("getType");
         Se330Project instance = new Se330Project();
-        String expResult = "";
-        String result = instance.getType();
-        assertTrue(expResult.equals(result));
+        int expResult = 0;
+        int result = instance.getType();
+        assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
     }
 
@@ -153,8 +153,8 @@ public class Se330ProjectTest {
     public void testGetEquip() {
         System.out.println("getEquip");
         Se330Project instance = new Se330Project();
-        String expResult = "";
-        String result = instance.getEquip();
+        int expResult = 0;
+        int result = instance.getEquip();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
     }

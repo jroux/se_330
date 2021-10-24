@@ -8,7 +8,7 @@ package se330project.Views;
 
 import se330project.Se330Project;
 import se330project.Models.workoutModel;
-import se330project.Controllers.workoutController;
+//import se330project.Controllers.workoutController;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -76,13 +76,7 @@ public class homePageView{
     
     public Button getbtnEqpGym() {
         return btnEqpGym;
-    }
-    
-        
-
-    
-    
-    
+    }   
 }
 //        StackPane root = new StackPane();
 //

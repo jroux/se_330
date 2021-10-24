@@ -261,9 +261,9 @@ public class Se330Project extends Application {
         }
     }
     
-//    public String getType(){
-//        return type;
-//    }
+    public int getType(){
+        return wrkTemp;
+    }
     
     public int getEquip(){
         return equip;
