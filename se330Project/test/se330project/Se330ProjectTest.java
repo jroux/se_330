@@ -5,11 +5,14 @@
  */
 package se330project;
 
+import java.util.ArrayList;
 import javafx.stage.Stage;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import java.lang.Object;
+
 
 /**
  *
@@ -198,6 +201,78 @@ public class Se330ProjectTest {
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
     }
+
+    /**
+     * Test of start method, of class Se330Project.
+     */
+//    @Test
+//    public void testStart() {
+//        System.out.println("start");
+//        Stage primaryStage = null;
+//        Se330Project instance = new Se330Project();
+//        instance.start(primaryStage);
+//        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
+//    }
+
+    /**
+     * Test of cardioWorkout method, of class Se330Project.
+     */
+    @Test
+    public void testCardioWorkout() {
+        System.out.println("cardioWorkout");
+        int Time = 0;
+        Se330Project instance = new Se330Project();
+        String expResult = "";
+        String result = instance.cardioWorkout(Time);
+        assertTrue(expResult.equals(result));
+    }
+
+    /**
+     * Test of bodyWeightWorkout method, of class Se330Project.
+     */
+//    @Test
+//    public void testBodyWeightWorkout() {
+//        System.out.println("bodyWeightWorkout");
+//        int Time = 0;
+//        ArrayList<String> createdWorkout = null;
+//        ArrayList<String> BWExercises = null;
+//        Se330Project instance = new Se330Project();
+//        ArrayList<String> expResult = null;
+//        ArrayList<String> result = instance.bodyWeightWorkout(20, createdWorkout, BWExercises);
+//        assertEquals(expResult, result);
+//        // TODO review the generated test code and remove the default call to fail.
+//        //fail("The test case is a prototype.");
+//    }
+//
+//    /**
+//     * Test of gymWorkout method, of class Se330Project.
+//     */
+//    @Test
+//    public void testGymWorkout() {
+//        System.out.println("gymWorkout");
+//        int Time = 0;
+//        ArrayList<String> createdWorkout = null;
+//        ArrayList<String> GymExercises = null;
+//        Se330Project instance = new Se330Project();
+//        ArrayList<String> expResult = null;
+//        ArrayList<String> result = instance.gymWorkout(Time, createdWorkout, GymExercises);
+//        assertEquals(expResult, result);
+//        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
+//    }
+
+    /**
+     * Test of main method, of class Se330Project.
+     */
+//    @Test
+//    public void testMain() {
+//        System.out.println("main");
+//        String[] args = null;
+//        Se330Project.main(args);
+//        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
+//    }
 
     /**
      * Test of main method, of class Se330Project.

@@ -152,7 +152,7 @@ public class Se330Project extends Application {
 //-----------------LOGIC-----------------------------
         Time = 20; 
         wrkTemp = 2;
-        equip = 2;
+        equip = 1;
         
         //Shuffle exercises to mix up order
         Collections.shuffle(BWExercises);
@@ -165,9 +165,9 @@ public class Se330Project extends Application {
                 cardioWorkout(Time);
             }
             if (wrkTemp == 2){ //LIFT
-                if (equip == 1){//BODY WEIGHT
+                if (equip == 1){//body weight
                     bodyWeightWorkout(Time, createdWorkout, BWExercises);
-                }else if (equip == 2){ //GYM
+                }else if (equip == 2){ //gym
                     gymWorkout(Time, createdWorkout, GymExercises);
                 }
             }
@@ -178,9 +178,9 @@ public class Se330Project extends Application {
             if (wrkTemp == 1){ //CARDIO
                 cardioWorkout(Time);
             }else if (wrkTemp == 2){ //LIFT
-                if (equip == 1){// BODY WEIGHT
+                if (equip == 1){//body weight
                     bodyWeightWorkout(Time, createdWorkout, BWExercises);
-                }else if (equip == 2){ //GYM
+                }else if (equip == 2){ //gym
                     gymWorkout(Time, createdWorkout, GymExercises);
                 }
             }
