@@ -122,6 +122,8 @@ public class Se330Project extends Application {
                 wrkTemp = 1;
                 clickCheck = true;
                 disableButton(clickCheck, view.getbtnTypeLift());
+                disableButton(clickCheck, view.getbtnEqpBody());
+                disableButton(clickCheck, view.getbtnEqpGym());
             }
         });
         
