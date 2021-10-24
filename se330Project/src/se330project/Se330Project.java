@@ -113,6 +113,8 @@ public class Se330Project extends Application {
                 Time = 40;
                 //checkTime40 = true;
                 System.out.println(Time);
+                clickCheck = true;
+                disableButton(clickCheck, view.getbtnTime20());
             }
         });
         
@@ -122,6 +124,8 @@ public class Se330Project extends Application {
             public void handle(ActionEvent event) {
                 wrkTemp = 1;
                 System.out.println(wrkTemp);
+                clickCheck = true;
+                disableButton(clickCheck, view.getbtnTypeLift());
             }
         });
         
@@ -131,6 +135,8 @@ public class Se330Project extends Application {
             public void handle(ActionEvent event) {
                 wrkTemp = 2;
                 System.out.println(wrkTemp);
+                clickCheck = true;
+                disableButton(clickCheck, view.getbtnTypeCardio());
             }
         });
         
@@ -140,6 +146,8 @@ public class Se330Project extends Application {
             public void handle(ActionEvent event) {
                 equip = 1;
                 System.out.println(equip);
+                clickCheck = true;
+                disableButton(clickCheck, view.getbtnEqpGym());
             }
         });
         
@@ -149,6 +157,8 @@ public class Se330Project extends Application {
             public void handle(ActionEvent event) {
                 equip = 2;
                 System.out.println(equip);
+                clickCheck = true;
+                disableButton(clickCheck, view.getbtnEqpBody());
             }
         });
         
