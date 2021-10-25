@@ -240,7 +240,8 @@ public class Se330ProjectTest {
 //        Se330Project instance = new Se330Project();
 //        ArrayList<String> expResult = null;
 //        ArrayList<String> result = instance.bodyWeightWorkout(20, createdWorkout, BWExercises);
-//        assertFalse(expResult.equals(result));
+//        //assertNotEquals(expResult, result);
+//        assertFalse(result.isEmpty());
 //        // TODO review the generated test code and remove the default call to fail.
 //        //fail("The test case is a prototype.");
 //    }

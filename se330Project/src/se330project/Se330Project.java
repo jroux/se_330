@@ -191,20 +191,22 @@ public class Se330Project extends Application {
         });
         
         //Button to reset buttons
-        view.getbtnReset().setOnAction(new EventHandler<ActionEvent>() {       
-            @Override
-            public void handle(ActionEvent event) {
-                int Time = 0;
-                int equip = 0;
-                int wrkTemp = 0;;
-                view.getbtnEqpBody().setDisable(false);
-                view.getbtnEqpGym().setDisable(false);
-                view.getbtnTime20().setDisable(false);
-                view.getbtnTime40().setDisable(false);
-                view.getbtnTypeLift().setDisable(false);
-                view.getbtnTypeCardio().setDisable(false);
-            }
-        });
+//        view.getbtnReset().setOnAction(new EventHandler<ActionEvent>() {       
+//            @Override
+//            public void handle(ActionEvent event) {
+//                int Time = 0;
+//                int equip = 0;
+//                int wrkTemp = 0;;
+//                view.getbtnEqpBody().setDisable(false);
+//                view.getbtnEqpGym().setDisable(false);
+//                view.getbtnTime20().setDisable(false);
+//                view.getbtnTime40().setDisable(false);
+//                view.getbtnTypeLift().setDisable(false);
+//                view.getbtnTypeCardio().setDisable(false);
+//                Collections.shuffle(BWExercises);
+//                Collections.shuffle(GymExercises);
+//            }
+//        });
         
         //creating gridpane
         GridPane root = new GridPane();
@@ -219,7 +221,7 @@ public class Se330Project extends Application {
         root.add(view.getbtnEqpBody(), 1, 2, 1, 1);
         root.add(view.getbtnEqpGym(), 0, 2, 1, 1);
         root.add(view.getbtnGenerate(), 0, 3, 1, 1);
-        root.add(view.getbtnReset(), 1, 3, 1, 1);
+//        root.add(view.getbtnReset(), 1, 3, 1, 1);
 
         //creating scene
         Scene scene = new Scene(root, 240, 100);
