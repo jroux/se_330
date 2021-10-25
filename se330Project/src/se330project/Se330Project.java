@@ -190,6 +190,22 @@ public class Se330Project extends Application {
             }
         });
         
+        //Button to reset buttons
+        view.getbtnReset().setOnAction(new EventHandler<ActionEvent>() {       
+            @Override
+            public void handle(ActionEvent event) {
+                int Time = 0;
+                int equip = 0;
+                int wrkTemp = 0;;
+                view.getbtnEqpBody().setDisable(false);
+                view.getbtnEqpGym().setDisable(false);
+                view.getbtnTime20().setDisable(false);
+                view.getbtnTime40().setDisable(false);
+                view.getbtnTypeLift().setDisable(false);
+                view.getbtnTypeCardio().setDisable(false);
+            }
+        });
+        
         //creating gridpane
         GridPane root = new GridPane();
         root.setHgap(20);
@@ -268,10 +284,12 @@ public class Se330Project extends Application {
     
     public Button disableButton(Boolean clickCheck, Button btn){
         if (clickCheck = true){
+            System.out.println("here");
             btn.setDisable(true);
         }
         return btn;
     }
+    
     
     public static int addNums(int a, int b){
         return a + b;
