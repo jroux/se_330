@@ -203,6 +203,7 @@ public class Se330Project extends Application {
         root.add(view.getbtnEqpBody(), 1, 2, 1, 1);
         root.add(view.getbtnEqpGym(), 0, 2, 1, 1);
         root.add(view.getbtnGenerate(), 0, 3, 1, 1);
+        root.add(view.getbtnReset(), 1, 3, 1, 1);
 
         //creating scene
         Scene scene = new Scene(root, 240, 100);
