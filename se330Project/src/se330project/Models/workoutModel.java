@@ -38,7 +38,7 @@ public class workoutModel {
         return equip;
     }
     
-    public void setEquip(int equipment){
+    public void setEquip(int equip){
         this.equip = equip;
     }
 }

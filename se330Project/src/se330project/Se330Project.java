@@ -20,6 +20,9 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
 import java.util.ArrayList;
 import java.util.Collections;
+import javafx.scene.layout.HBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 
 
 
@@ -64,12 +67,16 @@ public class Se330Project extends Application {
     String word = "";
     String workout = "";
     boolean clickCheck = false;
+    ArrayList<String> printWorkout = new ArrayList<String>();
 
     
     @Override
     public void start(Stage primaryStage) {
         
         homePageView view = new homePageView();
+        workoutModel model = new workoutModel();
+        
+        
         
         //Body weight exercises list
         ArrayList<String> BWExercises = new ArrayList<String>(); 
@@ -99,7 +106,7 @@ public class Se330Project extends Application {
         view.getbtnTime20().setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                Time = 20;
+                model.setTime(20);
                 clickCheck = true;
                 disableButton(clickCheck, view.getbtnTime40());
             }
@@ -109,7 +116,7 @@ public class Se330Project extends Application {
         view.getbtnTime40().setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                Time = 40;
+                model.setTime(40);
                 clickCheck = true;
                 disableButton(clickCheck, view.getbtnTime20());
             }
@@ -119,7 +126,7 @@ public class Se330Project extends Application {
         view.getbtnTypeCardio().setOnAction(new EventHandler<ActionEvent>() {  
             @Override
             public void handle(ActionEvent event) {
-                wrkTemp = 1;
+                model.setWrkTemp(1);
                 clickCheck = true;
                 disableButton(clickCheck, view.getbtnTypeLift());
                 disableButton(clickCheck, view.getbtnEqpBody());
@@ -131,7 +138,7 @@ public class Se330Project extends Application {
         view.getbtnTypeLift().setOnAction(new EventHandler<ActionEvent>() {          
             @Override
             public void handle(ActionEvent event) {
-                wrkTemp = 2;
+                model.setWrkTemp(2);
                 clickCheck = true;
                 disableButton(clickCheck, view.getbtnTypeCardio());
             }
@@ -141,7 +148,7 @@ public class Se330Project extends Application {
         view.getbtnEqpBody().setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                equip = 1;
+                model.setEquip(1);
                 clickCheck = true;
                 disableButton(clickCheck, view.getbtnEqpGym());
             }
@@ -151,7 +158,7 @@ public class Se330Project extends Application {
         view.getbtnEqpGym().setOnAction(new EventHandler<ActionEvent>() {       
             @Override
             public void handle(ActionEvent event) {
-                equip = 2;
+                model.setEquip(2);
                 clickCheck = true;
                 disableButton(clickCheck, view.getbtnEqpBody());
             }
@@ -161,29 +168,29 @@ public class Se330Project extends Application {
         view.getbtnGenerate().setOnAction(new EventHandler<ActionEvent>() {       
             @Override
             public void handle(ActionEvent event) {
-                if (Time == 20){
+                if (model.getTime() == 20){
                     numEx = 2; 
-                if (wrkTemp == 1){ //CARDIO
-                    cardioWorkout(Time);
+                if (model.getWrkTemp() == 1){ //CARDIO
+                    cardioWorkout(model, Time);
                 }
-                if (wrkTemp == 2){ //LIFT
-                    if (equip == 1){//body weight
-                        bodyWeightWorkout(Time, createdWorkout, BWExercises);
-                }else if (equip == 2){ //gym
-                    gymWorkout(Time, createdWorkout, GymExercises);
+                if (model.getWrkTemp() == 2){ //LIFT
+                    if (model.getEquip() == 1){//body weight
+                        bodyWeightWorkout(model, Time, createdWorkout, BWExercises);
+                }else if (model.getEquip() == 2){ //gym
+                    gymWorkout(model, Time, createdWorkout, GymExercises);
                     }
                 }
                 }
                 //40 MIN WORKOUT
-                if (Time == 40){
+                if (model.getTime() == 40){
                     numEx = 3;
-                if (wrkTemp == 1){ //CARDIO
-                    cardioWorkout(Time);
-                }else if (wrkTemp == 2){ //LIFT
-                    if (equip == 1){//body weight
-                        bodyWeightWorkout(Time, createdWorkout, BWExercises);
-                    }else if (equip == 2){ //gym
-                        gymWorkout(Time, createdWorkout, GymExercises);
+                if (model.getWrkTemp() == 1){ //CARDIO
+                    cardioWorkout(model, Time);
+                }else if (model.getWrkTemp() == 2){ //LIFT
+                    if (model.getEquip() == 1){//body weight
+                        bodyWeightWorkout(model, Time, createdWorkout, BWExercises);
+                    }else if (model.getEquip() == 2){ //gym
+                        gymWorkout(model, Time, createdWorkout, GymExercises);
                     }
                 }
                 }
@@ -213,6 +220,10 @@ public class Se330Project extends Application {
         root.setHgap(20);
         root.setVgap(20);
         
+//        Label wrkLabel = new Label();
+//        root.add(wrkLabel., 1, 3, 1, 1);
+
+        
         //Adding buttons to gridpane
         root.add(view.getbtnTime20(), 0, 0, 1, 1);
         root.add(view.getbtnTime40(), 1, 0, 1, 1);
@@ -231,19 +242,19 @@ public class Se330Project extends Application {
     }
     
  //METHODS FOR LOGIC------------------------------------------------------
-    public String cardioWorkout(int Time){
-        if (Time == 20){
+    public String cardioWorkout(workoutModel model, int Time){
+        if (model.getTime() == 20){
             workout = "Go for a 20 minute run outside.";
         }
-        if (Time == 40){
+        if (model.getTime() == 40){
             workout = "Go for a 40 minute run outside.";
         }
         System.out.println(workout);
         return workout;
     }
     
-    public ArrayList<String> bodyWeightWorkout(int Time, ArrayList<String> createdWorkout, ArrayList<String> BWExercises){
-        if (Time == 20){
+    public ArrayList<String> bodyWeightWorkout(workoutModel model, int Time, ArrayList<String> createdWorkout, ArrayList<String> BWExercises){
+        if (model.getTime() == 20){
             int index = 0;
             //choose exercises from body weight list
             while (createdWorkout.size() < numEx){
@@ -251,7 +262,7 @@ public class Se330Project extends Application {
                 index++;
             } 
         }
-        if (Time == 40){
+        if (model.getTime() == 40){
             int index = 0;
             //choose exercises from body weight list
             while (createdWorkout.size() < numEx){
@@ -263,8 +274,8 @@ public class Se330Project extends Application {
         return (createdWorkout);
     }
     
-    public ArrayList<String> gymWorkout(int Time, ArrayList<String> createdWorkout, ArrayList<String> GymExercises){
-        if (Time == 20){
+    public ArrayList<String> gymWorkout(workoutModel model, int Time, ArrayList<String> createdWorkout, ArrayList<String> GymExercises){
+        if (model.getTime() == 20){
             int index = 0;
             //choose exercises from gym list
             while (createdWorkout.size() < numEx){
@@ -272,7 +283,7 @@ public class Se330Project extends Application {
                 index++;
             } 
         }
-        if (Time == 40){
+        if (model.getTime() == 40){
             int index = 0;
             //choose exercises from gym list
             while (createdWorkout.size() < numEx){
@@ -286,10 +297,16 @@ public class Se330Project extends Application {
     
     public Button disableButton(Boolean clickCheck, Button btn){
         if (clickCheck = true){
-            System.out.println("here");
             btn.setDisable(true);
         }
         return btn;
+    }
+    
+    public ArrayList<String> setWorkout(ArrayList<String> createdWorkout){ 
+        for (int i=0; i< createdWorkout.size(); i++){
+            printWorkout.add(createdWorkout.get(i));
+        }  
+        return printWorkout;
     }
     
     
@@ -306,17 +323,21 @@ public class Se330Project extends Application {
         }
     }
     
-    public int getType(){
-        return wrkTemp;
+    public ArrayList<String> getWorkout(){
+        return printWorkout;
     }
     
-    public int getEquip(){
-        return equip;
-    }
-    
-    public int getTime(){
-        return Time;
-    }
+//    public int getType(){
+//        return wrkTemp;
+//    }
+//    
+//    public int getEquip(){
+//        return equip;
+//    }
+//    
+//    public int getTime(){
+//        return Time;
+//    }
     
     
 
