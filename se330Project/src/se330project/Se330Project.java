@@ -68,6 +68,7 @@ public class Se330Project extends Application {
     String workout = "";
     boolean clickCheck = false;
     ArrayList<String> printWorkout = new ArrayList<String>();
+    Label wrkLabel = new Label();
 
     
     @Override
@@ -168,32 +169,34 @@ public class Se330Project extends Application {
         view.getbtnGenerate().setOnAction(new EventHandler<ActionEvent>() {       
             @Override
             public void handle(ActionEvent event) {
-                if (model.getTime() == 20){
-                    numEx = 2; 
-                if (model.getWrkTemp() == 1){ //CARDIO
-                    cardioWorkout(model, Time);
-                }
-                if (model.getWrkTemp() == 2){ //LIFT
-                    if (model.getEquip() == 1){//body weight
-                        bodyWeightWorkout(model, Time, createdWorkout, BWExercises);
-                }else if (model.getEquip() == 2){ //gym
-                    gymWorkout(model, Time, createdWorkout, GymExercises);
-                    }
-                }
-                }
-                //40 MIN WORKOUT
-                if (model.getTime() == 40){
-                    numEx = 3;
-                if (model.getWrkTemp() == 1){ //CARDIO
-                    cardioWorkout(model, Time);
-                }else if (model.getWrkTemp() == 2){ //LIFT
-                    if (model.getEquip() == 1){//body weight
-                        bodyWeightWorkout(model, Time, createdWorkout, BWExercises);
-                    }else if (model.getEquip() == 2){ //gym
-                        gymWorkout(model, Time, createdWorkout, GymExercises);
-                    }
-                }
-                }
+                //setWorkout(model, createdWorkout, BWExercises, GymExercises);
+                wrkLabel.setText(setWorkout(model, createdWorkout, BWExercises, GymExercises).toString());
+//                if (model.getTime() == 20){
+//                    numEx = 2; 
+//                if (model.getWrkTemp() == 1){ //CARDIO
+//                    cardioWorkout(model, Time);
+//                }
+//                if (model.getWrkTemp() == 2){ //LIFT
+//                    if (model.getEquip() == 1){//body weight
+//                        bodyWeightWorkout(model, Time, createdWorkout, BWExercises);
+//                }else if (model.getEquip() == 2){ //gym
+//                    gymWorkout(model, Time, createdWorkout, GymExercises);
+//                    }
+//                }
+//                }
+//                //40 MIN WORKOUT
+//                if (model.getTime() == 40){
+//                    numEx = 3;
+//                if (model.getWrkTemp() == 1){ //CARDIO
+//                    cardioWorkout(model, Time);
+//                }else if (model.getWrkTemp() == 2){ //LIFT
+//                    if (model.getEquip() == 1){//body weight
+//                        bodyWeightWorkout(model, Time, createdWorkout, BWExercises);
+//                    }else if (model.getEquip() == 2){ //gym
+//                        gymWorkout(model, Time, createdWorkout, GymExercises);
+//                    }
+//                    }
+//                }
             }
         });
         
@@ -220,8 +223,13 @@ public class Se330Project extends Application {
         root.setHgap(20);
         root.setVgap(20);
         
-//        Label wrkLabel = new Label();
-//        root.add(wrkLabel., 1, 3, 1, 1);
+        root.add(wrkLabel, 0, 4, 1, 1);
+        
+        //Label wrkLabel = new Label("hi");
+        
+        
+//        TextArea text = new TextArea();
+//        text.setWrapText(true);
 
         
         //Adding buttons to gridpane
@@ -302,11 +310,34 @@ public class Se330Project extends Application {
         return btn;
     }
     
-    public ArrayList<String> setWorkout(ArrayList<String> createdWorkout){ 
-        for (int i=0; i< createdWorkout.size(); i++){
-            printWorkout.add(createdWorkout.get(i));
-        }  
-        return printWorkout;
+    public ArrayList<String> setWorkout(workoutModel model, ArrayList<String> createdWorkout, ArrayList<String> BWExercises, ArrayList<String> GymExercises){ 
+        if (model.getTime() == 20){
+            numEx = 2; 
+        if (model.getWrkTemp() == 1){ //CARDIO
+            cardioWorkout(model, Time);
+        }
+        if (model.getWrkTemp() == 2){ //LIFT
+            if (model.getEquip() == 1){//body weight
+                bodyWeightWorkout(model, Time, createdWorkout, BWExercises);
+        }else if (model.getEquip() == 2){ //gym
+            gymWorkout(model, Time, createdWorkout, GymExercises);
+        }
+        }
+        }
+        //40 MIN WORKOUT
+        if (model.getTime() == 40){
+            numEx = 3;
+        if (model.getWrkTemp() == 1){ //CARDIO
+            cardioWorkout(model, Time);
+        }else if (model.getWrkTemp() == 2){ //LIFT
+            if (model.getEquip() == 1){//body weight
+                bodyWeightWorkout(model, Time, createdWorkout, BWExercises);
+            }else if (model.getEquip() == 2){ //gym
+                gymWorkout(model, Time, createdWorkout, GymExercises);
+            }
+            }
+        }
+        return createdWorkout;
     }
     
     
@@ -323,9 +354,9 @@ public class Se330Project extends Application {
         }
     }
     
-    public ArrayList<String> getWorkout(){
-        return printWorkout;
-    }
+//    public ArrayList<String> getWorkout(){
+//        return printWorkout;
+//    }
     
 //    public int getType(){
 //        return wrkTemp;
