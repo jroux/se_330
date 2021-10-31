@@ -33,7 +33,6 @@ public class Se330Project extends Application {
     //Variables
     String word = ""; //used to unit test aWord
     boolean clickCheck = false; //used to disable buttons
-    ArrayList<String> printWorkout = new ArrayList<String>();
     Label wrkLabel = new Label(); //label to display workout on ui
 
     
@@ -263,7 +262,6 @@ public class Se330Project extends Application {
             }
             if (model.getWrkTemp() == 2){ //LIFT
                 if (model.getEquip() == 1){//body weight
-                    System.out.println("amde it");
                     bodyWeightWorkout(model, createdWorkout, BWExercises);
                 }if (model.getEquip() == 2){ //gym
                     gymWorkout(model, createdWorkout, GymExercises);

@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package se330project.Models;
 
+//imports and packages
+package se330project.Models;
 import java.util.ArrayList;
 import se330project.Se330Project;
 
@@ -17,6 +18,7 @@ public class workoutModel {
     int equip = 0;
     int wrkTemp = 0;
     
+    //getters and setters
     public int getTime(){
         return Time;
     }
@@ -42,39 +44,3 @@ public class workoutModel {
         this.equip = equip;
     }
 }
-
-//import javafx.beans.property.*;
-//public class workoutModel {
-//    private IntegerProperty time;
-//    //private String type;
-//    //private String equipment;
-//    
-//    public workoutModel(int time){
-//        this.time = new SimpleIntegerProperty(time);
-//    }
-//    
-//    public int getTime(){
-//        return time.get();
-//    }
-//    
-//    public IntegerProperty setTime(){
-//        return time;
-//    }
-    
-//    public String getType(){
-//    return type;
-//    }
-//    
-//    public void setType(String type){
-//        this.type = type;
-//    }
-//    
-//    
-//    public String getEquipment(){
-//    return equipment;
-//    }
-//    
-//    public void setEquipment(String equipment){
-//        this.equipment = equipment;
-//    }
-//}
