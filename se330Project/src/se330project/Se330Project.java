@@ -39,11 +39,7 @@ import javafx.scene.control.TextField;
 //    }
 //    
 //
-//    public static void main(String[] args) {
-//        launch(args);
-//    }
-//
-//}
+   
 
 
 
@@ -201,22 +197,22 @@ public class Se330Project extends Application {
         });
         
         //Button to reset buttons
-//        view.getbtnReset().setOnAction(new EventHandler<ActionEvent>() {       
-//            @Override
-//            public void handle(ActionEvent event) {
-//                int Time = 0;
-//                int equip = 0;
-//                int wrkTemp = 0;;
-//                view.getbtnEqpBody().setDisable(false);
-//                view.getbtnEqpGym().setDisable(false);
-//                view.getbtnTime20().setDisable(false);
-//                view.getbtnTime40().setDisable(false);
-//                view.getbtnTypeLift().setDisable(false);
-//                view.getbtnTypeCardio().setDisable(false);
-//                Collections.shuffle(BWExercises);
-//                Collections.shuffle(GymExercises);
-//            }
-//        });
+        view.getbtnReset().setOnAction(new EventHandler<ActionEvent>() {       
+            @Override
+            public void handle(ActionEvent event) {
+                model.setTime(0);
+                model.setEquip(0);
+                model.setWrkTemp(0);
+                view.getbtnEqpBody().setDisable(false);
+                view.getbtnEqpGym().setDisable(false);
+                view.getbtnTime20().setDisable(false);
+                view.getbtnTime40().setDisable(false);
+                view.getbtnTypeLift().setDisable(false);
+                view.getbtnTypeCardio().setDisable(false);
+                Collections.shuffle(BWExercises);
+                Collections.shuffle(GymExercises);
+            }
+        });
         
         //creating gridpane
         GridPane root = new GridPane();
@@ -240,7 +236,7 @@ public class Se330Project extends Application {
         root.add(view.getbtnEqpBody(), 1, 2, 1, 1);
         root.add(view.getbtnEqpGym(), 0, 2, 1, 1);
         root.add(view.getbtnGenerate(), 0, 3, 1, 1);
-//        root.add(view.getbtnReset(), 1, 3, 1, 1);
+        root.add(view.getbtnReset(), 1, 3, 1, 1);
 
         //creating scene
         Scene scene = new Scene(root, 240, 100);
@@ -250,15 +246,15 @@ public class Se330Project extends Application {
     }
     
  //METHODS FOR LOGIC------------------------------------------------------
-    public String cardioWorkout(workoutModel model, int Time){
+    public ArrayList<String> cardioWorkout(workoutModel model, int Time, ArrayList<String> createdWorkout){
         if (model.getTime() == 20){
             workout = "Go for a 20 minute run outside.";
         }
         if (model.getTime() == 40){
             workout = "Go for a 40 minute run outside.";
         }
-        System.out.println(workout);
-        return workout;
+        createdWorkout.add(workout);
+        return createdWorkout;
     }
     
     public ArrayList<String> bodyWeightWorkout(workoutModel model, int Time, ArrayList<String> createdWorkout, ArrayList<String> BWExercises){
@@ -314,7 +310,7 @@ public class Se330Project extends Application {
         if (model.getTime() == 20){
             numEx = 2; 
         if (model.getWrkTemp() == 1){ //CARDIO
-            cardioWorkout(model, Time);
+            cardioWorkout(model, Time, createdWorkout);
         }
         if (model.getWrkTemp() == 2){ //LIFT
             if (model.getEquip() == 1){//body weight
@@ -328,7 +324,7 @@ public class Se330Project extends Application {
         if (model.getTime() == 40){
             numEx = 3;
         if (model.getWrkTemp() == 1){ //CARDIO
-            cardioWorkout(model, Time);
+            cardioWorkout(model, Time, createdWorkout);
         }else if (model.getWrkTemp() == 2){ //LIFT
             if (model.getEquip() == 1){//body weight
                 bodyWeightWorkout(model, Time, createdWorkout, BWExercises);
