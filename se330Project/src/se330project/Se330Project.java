@@ -284,9 +284,8 @@ public class Se330Project extends Application {
         }
         for (int i = 0; i < createdWorkout.size(); i++){
             output += createdWorkout.get(i);
+            output += "\n";
         }
-       
-        
         return output;
     }
     
