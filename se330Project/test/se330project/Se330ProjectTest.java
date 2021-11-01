@@ -12,6 +12,9 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import java.lang.Object;
+import javafx.scene.control.Button;
+import se330project.Models.workoutModel;
+import se330project.Views.homePageView;
 
 
 /**
@@ -34,30 +37,16 @@ public class Se330ProjectTest {
     /**
      * Test of start method, of class Se330Project.
      */
-//    @Test
-//    public void testStart() {
-//        System.out.println("start");
-//        Stage primaryStage = null;
-//        Se330Project instance = new Se330Project();
-//        instance.start(primaryStage);
-//        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
-//    }
+    @Test
+    public void testStart() {
+        //System.out.println("start");
+        //Stage primaryStage = null;
+        //Se330Project instance = new Se330Project();
+        //instance.start(primaryStage);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
 
-    /**
-     * Test of addNums method, of class Se330Project.
-     */
-//    @Test
-//    public void testAddNums() {
-//        System.out.println("addNums");
-//        int a = 0;
-//        int b = 0;
-//        int expResult = 0;
-//        int result = Se330Project.addNums(a, b);
-//        assertEquals(expResult, result);
-//        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
-//    }
 
     @Test
     public void testAddNums(){
@@ -67,190 +56,82 @@ public class Se330ProjectTest {
         assertNotEquals(expectedResult, Se330Project.addNums(10,2));
     }
 
-    /**
-     * Test of start method, of class Se330Project.
-     */
-//    @Test
-//    public void testStart() {
-//        System.out.println("start");
-//        Stage primaryStage = null;
-//        Se330Project instance = new Se330Project();
-//        instance.start(primaryStage);
-//        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
-//    }
 
-    /**
-     * Test of aWord method, of class Se330Project.
+//
+//    /**
+//     * Test of createBWExercises method, of class Se330Project.
 //     */
 //    @Test
-//    public void testAWord() {
-//        System.out.println("aWord");
-//        String word = "";
+//    public void testCreateBWExercises() {
+//        System.out.println("createBWExercises");
 //        Se330Project instance = new Se330Project();
-//        Boolean expResult = false;
-//        Boolean result = instance.aWord(word);
+//        ArrayList<String> expResult = null;
+//        ArrayList<String> result = instance.createBWExercises();
 //        assertEquals(expResult, result);
 //        // TODO review the generated test code and remove the default call to fail.
 //        fail("The test case is a prototype.");
 //    }
-
-    /**
-     * Test of start method, of class Se330Project.
-     */
-//    @Test
-//    public void testStart() {
-//        System.out.println("start");
-//        Stage primaryStage = null;
-//        Se330Project instance = new Se330Project();
-//        instance.start(primaryStage);
-//        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
-//    }
-
-    /**
-     * Test of getType method, of class Se330Project.
-     */
-//    @Test
-//    public void testGetType() {
-//        System.out.println("getType");
-//        Se330Project instance = new Se330Project();
-//        int expResult = 0;
-//        int result = instance.getType();
-//        assertEquals(expResult, result);
-//        // TODO review the generated test code and remove the default call to fail.
-//    }
-
-    /**
-     * Test of start method, of class Se330Project.
+//
+//    /**
+//     * Test of createGymExercises method, of class Se330Project.
 //     */
 //    @Test
-//    public void testStart() {
-//        System.out.println("start");
-//        Stage primaryStage = null;
+//    public void testCreateGymExercises() {
+//        System.out.println("createGymExercises");
 //        Se330Project instance = new Se330Project();
-//        instance.start(primaryStage);
+//        ArrayList<String> expResult = null;
+//        ArrayList<String> result = instance.createGymExercises();
+//        assertEquals(expResult, result);
 //        // TODO review the generated test code and remove the default call to fail.
 //        fail("The test case is a prototype.");
 //    }
-
-    /**
-     * Test of aWord method, of class Se330Project.
+//
+//    /**
+//     * Test of turnGoOn method, of class Se330Project.
 //     */
 //    @Test
-//    public void testAWord() {
-//        System.out.println("aWord");
-//        String word = "";
+//    public void testTurnGoOn() {
+//        System.out.println("turnGoOn");
+//        workoutModel model = null;
+//        homePageView view = null;
 //        Se330Project instance = new Se330Project();
-//        Boolean expResult = null;
-//        Boolean result = instance.aWord(word);
-//        assertEquals(expResult, result);
+//        instance.turnGoOn(model, view);
 //        // TODO review the generated test code and remove the default call to fail.
 //        fail("The test case is a prototype.");
 //    }
-
-    /**
-     * Test of getEquip method, of class Se330Project.
-     */
-//    @Test
-//    public void testGetEquip() {
-//        System.out.println("getEquip");
-//        Se330Project instance = new Se330Project();
-//        int expResult = 0;
-//        int result = instance.getEquip();
-//        assertEquals(expResult, result);
-//        // TODO review the generated test code and remove the default call to fail.
-//    }
-
-    /**
-     * Test of start method, of class Se330Project.
-     */
-//    @Test
-//    public void testStart() {
-//        System.out.println("start");
-//        Stage primaryStage = null;
-//        Se330Project instance = new Se330Project();
-//        instance.start(primaryStage);
-//        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
-//    }
-
-    /**
-     * Test of aWord method, of class Se330Project.
-     */
-    @Test
-    public void testAWord() {
-        System.out.println("aWord");
-        String word = "";
-        Se330Project instance = new Se330Project();
-        Boolean expResult = false;
-        Boolean result = instance.aWord(word);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-    }
-
-    /**
-     *    public void testGetTime() {
-        System.out.println("getTime");
-        Se330Project instance = new Se330Project();
-        int expResult = 0;
-        int result = instance.getTime();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-    } Test of getTime method, of class Se330Project.
-     */
-//    @Test
-//    public void testGetTime() {
-//        System.out.println("getTime");
-//        Se330Project instance = new Se330Project();
-//        int expResult = 0;
-//        int result = instance.getTime();
-//        assertEquals(expResult, result);
-//        // TODO review the generated test code and remove the default call to fail.
-//    }
-
-    /**
-     * Test of start method, of class Se330Project.
-     */
-//    @Test
-//    public void testStart() {
-//        System.out.println("start");
-//        Stage primaryStage = null;
-//        Se330Project instance = new Se330Project();
-//        instance.start(primaryStage);
-//        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
-//    }
-
-    /**
-     * Test of cardioWorkout method, of class Se330Project.
-     */
+//
+//    /**
+//     * Test of cardioWorkout method, of class Se330Project.
+//     */
 //    @Test
 //    public void testCardioWorkout() {
 //        System.out.println("cardioWorkout");
-//        int Time = 0;
+//        workoutModel model = null;
+//        ArrayList<String> createdWorkout = null;
+//        homePageView view = null;
 //        Se330Project instance = new Se330Project();
-//        String expResult = "";
-//        String result = instance.cardioWorkout(Time);
-//        assertTrue(expResult.equals(result));
+//        ArrayList<String> expResult = null;
+//        ArrayList<String> result = instance.cardioWorkout(model, createdWorkout, view);
+//        assertEquals(expResult, result);
+//        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
 //    }
-
-    /**
-     * Test of bodyWeightWorkout method, of class Se330Project.
-     */
+//
+//    /**
+//     * Test of bodyWeightWorkout method, of class Se330Project.
+//     */
 //    @Test
 //    public void testBodyWeightWorkout() {
 //        System.out.println("bodyWeightWorkout");
-//        int Time = 0;
+//        workoutModel model = null;
 //        ArrayList<String> createdWorkout = null;
 //        ArrayList<String> BWExercises = null;
 //        Se330Project instance = new Se330Project();
 //        ArrayList<String> expResult = null;
-//        ArrayList<String> result = instance.bodyWeightWorkout(20, createdWorkout, BWExercises);
-//        //assertNotEquals(expResult, result);
-//        assertFalse(result.isEmpty());
+//        ArrayList<String> result = instance.bodyWeightWorkout(model, createdWorkout, BWExercises);
+//        assertEquals(expResult, result);
 //        // TODO review the generated test code and remove the default call to fail.
-//        //fail("The test case is a prototype.");
+//        fail("The test case is a prototype.");
 //    }
 //
 //    /**
@@ -259,20 +140,72 @@ public class Se330ProjectTest {
 //    @Test
 //    public void testGymWorkout() {
 //        System.out.println("gymWorkout");
-//        int Time = 0;
+//        workoutModel model = null;
 //        ArrayList<String> createdWorkout = null;
 //        ArrayList<String> GymExercises = null;
 //        Se330Project instance = new Se330Project();
 //        ArrayList<String> expResult = null;
-//        ArrayList<String> result = instance.gymWorkout(Time, createdWorkout, GymExercises);
+//        ArrayList<String> result = instance.gymWorkout(model, createdWorkout, GymExercises);
 //        assertEquals(expResult, result);
 //        // TODO review the generated test code and remove the default call to fail.
 //        fail("The test case is a prototype.");
 //    }
-
-    /**
-     * Test of main method, of class Se330Project.
-     */
+//
+//    /**
+//     * Test of setWorkout method, of class Se330Project.
+//     */
+//    @Test
+//    public void testSetWorkout() {
+//        System.out.println("setWorkout");
+//        workoutModel model = null;
+//        ArrayList<String> createdWorkout = null;
+//        ArrayList<String> BWExercises = null;
+//        ArrayList<String> GymExercises = null;
+//        homePageView view = null;
+//        Se330Project instance = new Se330Project();
+//        String expResult = "";
+//        String result = instance.setWorkout(model, createdWorkout, BWExercises, GymExercises, view);
+//        assertEquals(expResult, result);
+//        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
+//    }
+//
+//    /**
+//     * Test of disableButton method, of class Se330Project.
+//     */
+//    @Test
+//    public void testDisableButton() {
+//        System.out.println("disableButton");
+//        Boolean clickCheck = null;
+//        Button btn = null;
+//        Se330Project instance = new Se330Project();
+//        Button expResult = null;
+//        Button result = instance.disableButton(clickCheck, btn);
+//        assertEquals(expResult, result);
+//        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
+//    }
+//
+//    /**
+//     * Test of resetWorkout method, of class Se330Project.
+//     */
+//    @Test
+//    public void testResetWorkout() {
+//        System.out.println("resetWorkout");
+//        homePageView view = null;
+//        workoutModel model = null;
+//        ArrayList<String> BWExercises = null;
+//        ArrayList<String> GymExercises = null;
+//        ArrayList<String> createdWorkout = null;
+//        Se330Project instance = new Se330Project();
+//        instance.resetWorkout(view, model, BWExercises, GymExercises, createdWorkout);
+//        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
+//    }
+//
+//    /**
+//     * Test of main method, of class Se330Project.
+//     */
 //    @Test
 //    public void testMain() {
 //        System.out.println("main");
@@ -281,66 +214,7 @@ public class Se330ProjectTest {
 //        // TODO review the generated test code and remove the default call to fail.
 //        fail("The test case is a prototype.");
 //    }
-
-    /**
-     * Test of main method, of class Se330Project.
-     */
-//    @Test
-//    public void testMain() {
-//        System.out.println("main");
-//        String[] args = null;
-//        Se330Project.main(args);
-//        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
-//    }
-
-    /**
-     * Test of main method, of class Se330Project.
-     */
-//    @Test
-//    public void testMain() {
-//        System.out.println("main");
-//        String[] args = null;
-//        Se330Project.main(args);
-//        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
-//    }
-
-    /**
-     * Test of main method, of class Se330Project.
-     */
-//    @Test
-//    public void testMain() {
-//        System.out.println("main");
-//        String[] args = null;
-//        Se330Project.main(args);
-//        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
-//    }
-
-    /**
-     * Test of main method, of class Se330Project.
-     */
-//    @Test
-//    public void testMain() {
-//        System.out.println("main");
-//        String[] args = null;
-//        Se330Project.main(args);
-//        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
-//    }
-//    
-
-    /**
-     * Test of main method, of class Se330Project.
-     */
-//    @Test
-//    public void testMain() {
-//        System.out.println("main");
-//        String[] args = null;
-//        Se330Project.main(args);
-//        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
-//    }
-    
 }
+
+
+

@@ -314,14 +314,14 @@ public class Se330Project extends Application {
         return a + b;
     }
     
-    public Boolean aWord(String word){
-        if (word.contains("a")){
-           return true;
-        }
-        else{
-            return false;
-        }
-    } 
+//    public Boolean aWord(String word){
+//        if (word.contains("a")){
+//           return true;
+//        }
+//        else{
+//            return false;
+//        }
+//    } 
 
     /**
      * @param args the command line arguments
