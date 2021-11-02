@@ -15,6 +15,9 @@ import java.lang.Object;
 import javafx.scene.control.Button;
 import se330project.Models.workoutModel;
 import se330project.Views.homePageView;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 
 /**
@@ -56,21 +59,29 @@ public class Se330ProjectTest {
         assertNotEquals(expectedResult, Se330Project.addNums(10,2));
     }
 
-
-//
-//    /**
-//     * Test of createBWExercises method, of class Se330Project.
-//     */
+    /**
+     * Test of aWord method, of class Se330Project.
+     */
 //    @Test
-//    public void testCreateBWExercises() {
-//        System.out.println("createBWExercises");
+//    public void testAWord() {
+//        System.out.println("aWord");
+//        String word = "happy";
 //        Se330Project instance = new Se330Project();
-//        ArrayList<String> expResult = null;
-//        ArrayList<String> result = instance.createBWExercises();
-//        assertEquals(expResult, result);
-//        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
+//        Boolean expResult = true;
+//        Boolean result = instance.aWord(word);
+//        assertTrue(expResult.equals(result));
 //    }
+//
+    /**
+     * Test of createBWExercises method, of class Se330Project.
+     */
+    @Test
+    public void testCreateBWExercises() {
+        System.out.println("createBWExercises");
+        Se330Project instance = new Se330Project();
+        ArrayList<String> result = instance.createBWExercises();
+        assertNotNull(result);
+    }
 //
 //    /**
 //     * Test of createGymExercises method, of class Se330Project.

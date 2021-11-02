@@ -33,7 +33,8 @@ public class Se330Project extends Application {
     //Variables
     String word = ""; //used to unit test aWord
     boolean clickCheck = false; //used to disable buttons
-    Label wrkLabel = new Label(); //label to display workout on ui
+    Label wrkLabel = new Label();
+    //label to display workout on ui
 
     
     @Override
@@ -42,6 +43,7 @@ public class Se330Project extends Application {
         //create view and model
         homePageView view = new homePageView();
         workoutModel model = new workoutModel();
+
         
         //New created workout list
         ArrayList<String> createdWorkout = new ArrayList<String>(); 
@@ -315,6 +317,7 @@ public class Se330Project extends Application {
     }
     
 //    public Boolean aWord(String word){
+//        String word = "happy";
 //        if (word.contains("a")){
 //           return true;
 //        }
