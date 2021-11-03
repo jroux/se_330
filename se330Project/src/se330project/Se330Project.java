@@ -8,6 +8,7 @@
 package se330project;
 import se330project.Models.workoutModel;
 import se330project.Views.homePageView;
+import se330project.Views.loginView;
 import Controller.controller;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -41,6 +42,7 @@ public class Se330Project extends Application {
         
         //create model, view, and controller
         homePageView view = new homePageView();
+        loginView logView = new loginView();
         workoutModel model = new workoutModel();
         controller controller = new controller();
 
@@ -51,6 +53,9 @@ public class Se330Project extends Application {
         
         
 //--------------------------BUTTON ON CLICK EVENT-------------------------------------------------
+
+
+
         //Button for 20 minute workout
         view.getbtnTime20().setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -135,6 +140,11 @@ public class Se330Project extends Application {
         });
 
 //-------------------------SETTING UP SCENE--------------------------------------
+        //login GridPane 
+        GridPane logRoot = new GridPane();
+        
+       
+
         //creating gridpane
         GridPane root = new GridPane();
         root.setHgap(20);
@@ -151,13 +161,27 @@ public class Se330Project extends Application {
         root.add(view.getbtnGenerate(), 0, 3, 1, 1);
         root.add(view.getbtnReset(), 1, 3, 1, 1);
         view.getbtnGenerate().setDisable(true);
+        
+        logRoot.add(logView.getbtnLogin(), 0, 0, 1, 1);
 
         //creating scene
+        Scene loginScene = new Scene(logRoot, 240, 100);
         Scene scene = new Scene(root, 240, 100);
         primaryStage.setTitle("workIT");
-        primaryStage.setScene(scene);
+        primaryStage.setScene(loginScene);
         primaryStage.show();
+        
+        
+        //Button to login
+        logView.getbtnLogin().setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                primaryStage.setScene(scene);
+                primaryStage.show();
+            }
+        });
     }
+    
 
     /**
      * @param args the command line arguments
