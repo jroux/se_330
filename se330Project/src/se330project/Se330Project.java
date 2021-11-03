@@ -50,12 +50,37 @@ public class Se330Project extends Application {
         //New created workout list
         ArrayList<String> createdWorkout = new ArrayList<String>(); 
          
+//-------------------------SETTING UP SCENE--------------------------------------
+        //login GridPane 
+        GridPane logRoot = new GridPane();
+        logRoot.add(logView.getbtnLogin(), 0, 0, 1, 1);
+ 
+        //workout gridpane
+        GridPane root = new GridPane();
+        root.setHgap(20);
+        root.setVgap(20);
+        root.add(wrkLabel, 0, 4, 1, 1);
+        
+        //Adding buttons to gridpane
+        root.add(view.getbtnTime20(), 0, 0, 1, 1);
+        root.add(view.getbtnTime40(), 1, 0, 1, 1);
+        root.add(view.getbtnTypeCardio(), 1, 1, 1, 1);  
+        root.add(view.getbtnTypeLift(), 0, 1, 1, 1);
+        root.add(view.getbtnEqpBody(), 1, 2, 1, 1);
+        root.add(view.getbtnEqpGym(), 0, 2, 1, 1);
+        root.add(view.getbtnGenerate(), 0, 3, 1, 1);
+        root.add(view.getbtnReset(), 1, 3, 1, 1);
+        view.getbtnGenerate().setDisable(true);
+        
+        //creating scenes
+        Scene loginScene = new Scene(logRoot, 240, 100);
+        Scene scene = new Scene(root, 240, 100); //workout scene
+        primaryStage.setTitle("workIT");
+        primaryStage.setScene(loginScene);
+        primaryStage.show();
         
         
 //--------------------------BUTTON ON CLICK EVENT-------------------------------------------------
-
-
-
         //Button for 20 minute workout
         view.getbtnTime20().setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -139,39 +164,6 @@ public class Se330Project extends Application {
             }
         });
 
-//-------------------------SETTING UP SCENE--------------------------------------
-        //login GridPane 
-        GridPane logRoot = new GridPane();
-        
-       
-
-        //creating gridpane
-        GridPane root = new GridPane();
-        root.setHgap(20);
-        root.setVgap(20);
-        root.add(wrkLabel, 0, 4, 1, 1);
-        
-        //Adding buttons to gridpane
-        root.add(view.getbtnTime20(), 0, 0, 1, 1);
-        root.add(view.getbtnTime40(), 1, 0, 1, 1);
-        root.add(view.getbtnTypeCardio(), 1, 1, 1, 1);  
-        root.add(view.getbtnTypeLift(), 0, 1, 1, 1);
-        root.add(view.getbtnEqpBody(), 1, 2, 1, 1);
-        root.add(view.getbtnEqpGym(), 0, 2, 1, 1);
-        root.add(view.getbtnGenerate(), 0, 3, 1, 1);
-        root.add(view.getbtnReset(), 1, 3, 1, 1);
-        view.getbtnGenerate().setDisable(true);
-        
-        logRoot.add(logView.getbtnLogin(), 0, 0, 1, 1);
-
-        //creating scene
-        Scene loginScene = new Scene(logRoot, 240, 100);
-        Scene scene = new Scene(root, 240, 100);
-        primaryStage.setTitle("workIT");
-        primaryStage.setScene(loginScene);
-        primaryStage.show();
-        
-        
         //Button to login
         logView.getbtnLogin().setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -181,7 +173,6 @@ public class Se330Project extends Application {
             }
         });
     }
-    
 
     /**
      * @param args the command line arguments
