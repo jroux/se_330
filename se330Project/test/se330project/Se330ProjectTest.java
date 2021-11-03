@@ -51,13 +51,13 @@ public class Se330ProjectTest {
     }
 
 
-    @Test
-    public void testAddNums(){
-        System.out.println("addNums");
-        int expectedResult = 4;
-        assertEquals(expectedResult, Se330Project.addNums(2,2));
-        assertNotEquals(expectedResult, Se330Project.addNums(10,2));
-    }
+//    @Test
+//    public void testAddNums(){
+//        System.out.println("addNums");
+//        int expectedResult = 4;
+//        assertEquals(expectedResult, Se330Project.addNums(2,2));
+//        assertNotEquals(expectedResult, Se330Project.addNums(10,2));
+//    }
 
     /**
      * Test of aWord method, of class Se330Project.
@@ -74,14 +74,14 @@ public class Se330ProjectTest {
 //
     /**
      * Test of createBWExercises method, of class Se330Project.
-     */
-    @Test
-    public void testCreateBWExercises() {
-        System.out.println("createBWExercises");
-        Se330Project instance = new Se330Project();
-        ArrayList<String> result = instance.createBWExercises();
-        assertNotNull(result);
-    }
+//     */
+//    @Test
+//    public void testCreateBWExercises() {
+//        System.out.println("createBWExercises");
+//        Se330Project instance = new Se330Project();
+//        ArrayList<String> result = instance.createBWExercises();
+//        assertNotNull(result);
+//    }
 //
 //    /**
 //     * Test of createGymExercises method, of class Se330Project.
