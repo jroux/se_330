@@ -86,8 +86,10 @@ public class Se330Project extends Application {
  
         //workout gridpane
         GridPane root = new GridPane();
-        root.setHgap(20);
-        root.setVgap(20);
+        root.setAlignment(Pos.CENTER);
+        root.setHgap(10);
+        root.setVgap(10);
+        root.setPadding(new Insets(25, 25, 25, 25));
         root.add(wrkLabel, 0, 4, 1, 1);
         
         //Adding buttons to gridpane
@@ -103,7 +105,7 @@ public class Se330Project extends Application {
         
         //creating scenes
         Scene loginScene = new Scene(logRoot, 300, 275);
-        Scene scene = new Scene(root, 240, 100); //workout scene
+        Scene scene = new Scene(root, 300, 275); //workout scene
         primaryStage.setTitle("workIT");
         primaryStage.setScene(loginScene);
         primaryStage.show();
