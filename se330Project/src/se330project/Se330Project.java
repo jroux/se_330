@@ -28,6 +28,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextArea;
 import javafx.scene.text.Text;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.control.PasswordField;
@@ -104,7 +105,7 @@ public class Se330Project extends Application {
         view.getbtnGenerate().setDisable(true);
         
         //creating scenes
-        Scene loginScene = new Scene(logRoot, 300, 275);
+        Scene loginScene = new Scene(logRoot, 400, 275);
         Scene scene = new Scene(root, 300, 275); //workout scene
         primaryStage.setTitle("workIT");
         primaryStage.setScene(loginScene);
@@ -199,10 +200,26 @@ public class Se330Project extends Application {
         logView.getbtnLogin().setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                primaryStage.setScene(scene);
-                primaryStage.show();
+                System.out.println(userTextField.getText());
+                System.out.println(pwBox.getText());
+                if (userTextField.getText().isEmpty()){
+                    System.out.println("made it");
+                    Label noUserName = new Label("Please enter a user name.");
+                    logRoot.add(noUserName, 0, 8);
+                    System.out.print("You need to enter a user name.");
+                }else if (pwBox.getText().isEmpty()){
+                    Label noPwBox = new Label("Please enter a password.");
+                    logRoot.add(noPwBox, 0, 9);
+                    System.out.print("You need to enter a password.");
+                }
+                else{
+                    primaryStage.setScene(scene);
+                    primaryStage.show();
+                }
+
             }
         });
+        
     }
 
     /**
