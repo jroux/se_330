@@ -186,7 +186,9 @@ public class Se330Project extends Application {
             @Override
             public void handle(ActionEvent event) {
                 wrkLabel.setText(controller.setWorkout(model, createdWorkout, controller.createBWExercises(), controller.createGymExercises(), view));
-               
+                //this code prevents user from spamming the go button
+                clickCheck = true;
+                controller.disableButton(clickCheck, view.getbtnGenerate());
             }
         });
         
@@ -194,33 +196,16 @@ public class Se330Project extends Application {
         view.getbtnReset().setOnAction(new EventHandler<ActionEvent>() {       
             @Override
             public void handle(ActionEvent event) {
+                controller.disableButton(false, view.getbtnGenerate()); //need to enable go button again
                 controller.resetWorkout(view, model, controller.createBWExercises(), controller.createGymExercises(), createdWorkout);
             }
         });
 
         //Button to login
-        //PUT THIS INTO A FUNCTION!!!!!!!!!!
         logView.getbtnLogin().setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 logController.userPassCheck(userTextField, logRoot, pwBox, primaryStage, scene);
-                //System.out.println(userTextField.getText());
-                //System.out.println(pwBox.getText());
-//                if (userTextField.getText().isEmpty()){
-//                    System.out.println("made it");
-//                    Label noUserName = new Label("Please enter a user name.");
-//                    logRoot.add(noUserName, 0, 8);
-//                    System.out.print("You need to enter a user name.");
-//                }else if (pwBox.getText().isEmpty()){
-//                    Label noPwBox = new Label("Please enter a password.");
-//                    logRoot.add(noPwBox, 0, 9);
-//                    System.out.print("You need to enter a password.");
-//                }
-//                else{
-//                    primaryStage.setScene(scene);
-//                    primaryStage.show();
-//                }
-
             }
         });
         
