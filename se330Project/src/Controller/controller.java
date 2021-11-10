@@ -52,7 +52,7 @@ public class controller {
     public void turnGoOn(workoutModel model, homePageView view){
         if (model.getTime() != 0 && model.getEquip() != 0 && model.getWrkTemp() != 0){
             view.getbtnGenerate().setDisable(false);
-        }if (model.getTime() != 0 && model.getWrkTemp() == 1){
+        }else if (model.getTime() != 0 && model.getWrkTemp() == 1){
             view.getbtnGenerate().setDisable(false);
         }
     }

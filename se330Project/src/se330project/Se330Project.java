@@ -85,7 +85,12 @@ public class Se330Project extends Application {
         logRoot.add(pwBox, 1, 2);
          
 //-------------------------SETTING UP MAIN SCENE--------------------------------------
-
+        GridPane browseRoot = new GridPane();
+        browseRoot.setAlignment(Pos.CENTER);
+        browseRoot.setHgap(10);
+        browseRoot.setVgap(10);
+        browseRoot.setPadding(new Insets(25, 25, 25, 25));
+        
  
         //workout gridpane
         GridPane root = new GridPane();
@@ -104,11 +109,13 @@ public class Se330Project extends Application {
         root.add(view.getbtnEqpGym(), 0, 2, 1, 1);
         root.add(view.getbtnGenerate(), 0, 3, 1, 1);
         root.add(view.getbtnReset(), 1, 3, 1, 1);
+        root.add(view.getbtnBrowse(), 1, 4, 1, 1);
         view.getbtnGenerate().setDisable(true);
         
         //creating scenes
         Scene loginScene = new Scene(logRoot, 400, 275);
         Scene scene = new Scene(root, 300, 275); //workout scene
+        Scene browseScene = new Scene(browseRoot, 400, 275);
         primaryStage.setTitle("workIT");
         primaryStage.setScene(loginScene);
         primaryStage.show();
@@ -206,6 +213,15 @@ public class Se330Project extends Application {
             @Override
             public void handle(ActionEvent event) {
                 logController.userPassCheck(userTextField, logRoot, pwBox, primaryStage, scene);
+            }
+        });
+        
+        //Button to browse premade workouts
+        view.getbtnBrowse().setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                primaryStage.setScene(browseScene);
+                primaryStage.show();
             }
         });
         

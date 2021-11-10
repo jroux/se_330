@@ -54,8 +54,12 @@ public class homePageView{
     Button btnEqpGym = new Button("Gym");
     Button btnGenerate = new Button ("GO");
     Button btnReset = new Button ("RESET");
+    Button btnBrowse = new Button ("Browse");
     
     //Getters for buttons
+    public Button getbtnBrowse() {
+        return btnBrowse;
+    }
     public Button getbtnGenerate() {
         return btnGenerate;
     }
