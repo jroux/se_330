@@ -10,6 +10,7 @@ import se330project.Models.workoutModel;
 import se330project.Views.homePageView;
 import se330project.Views.loginView;
 import Controller.loginController;
+import se330project.Views.browseView;
 import Controller.controller;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -54,6 +55,7 @@ public class Se330Project extends Application {
         workoutModel model = new workoutModel();
         controller controller = new controller();
         loginController logController = new loginController();
+        browseView browseView = new browseView();
 
         
         //New created workout list
@@ -90,6 +92,7 @@ public class Se330Project extends Application {
         browseRoot.setHgap(10);
         browseRoot.setVgap(10);
         browseRoot.setPadding(new Insets(25, 25, 25, 25));
+        browseRoot.add(browseView.getbtnBack(), 0, 0, 1, 1);
         
  
         //workout gridpane
@@ -221,6 +224,15 @@ public class Se330Project extends Application {
             @Override
             public void handle(ActionEvent event) {
                 primaryStage.setScene(browseScene);
+                primaryStage.show();
+            }
+        });
+        
+        //Button to go back to home scene
+        browseView.getbtnBack().setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                primaryStage.setScene(scene);
                 primaryStage.show();
             }
         });
