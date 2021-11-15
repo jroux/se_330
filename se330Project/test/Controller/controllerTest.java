@@ -10,6 +10,7 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.mockito.Mockito;
 import static org.mockito.Mockito.mock;
 import se330project.Se330Project;
 import se330project.Models.workoutModel;
@@ -41,6 +42,7 @@ public class controllerTest {
      */
     @Test
     public void testCreateBWExercises() {
+        //testing null case
         System.out.println("createBWExercises");
         controller instance = new controller();
         ArrayList<String> result = instance.createBWExercises();
@@ -53,6 +55,7 @@ public class controllerTest {
      */
     @Test
     public void testCreateGymExercises() {
+        //testing null case
         System.out.println("createGymExercises");
         controller instance = new controller();
         ArrayList<String> result = instance.createGymExercises();
@@ -65,11 +68,15 @@ public class controllerTest {
      */
     @Test
     public void testCardioWorkout() {
+        //testing null case
         System.out.println("cardioWorkout");
         controller instance = new controller();
         ArrayList<String> createdWorkout = new ArrayList<String>();
         ArrayList<String> result = instance.cardioWorkout(modelMock, createdWorkout, viewMock);
         assertNotNull(result);
+        
+        createdWorkout.clear();
+        assertTrue(createdWorkout.isEmpty());
     }
     
     /**
@@ -77,6 +84,7 @@ public class controllerTest {
      */
     @Test
     public void testBodyWeightWorkout() {
+        //testing null case
         System.out.println("bodyWeightWorkout");
         controller instance = new controller();
         ArrayList<String> createdWorkout = new ArrayList<String>();
@@ -90,6 +98,7 @@ public class controllerTest {
      */
     @Test
     public void testGymWorkout() {
+        //testing null case
         System.out.println("gymWorkout");
         controller instance = new controller();
         ArrayList<String> createdWorkout = new ArrayList<String>();
@@ -103,6 +112,7 @@ public class controllerTest {
      */
     @Test
     public void testSetWorkout() {
+        //testing null case
         System.out.println("setWorkout");
         controller instance = new controller();
         ArrayList<String> createdWorkout = new ArrayList<String>();

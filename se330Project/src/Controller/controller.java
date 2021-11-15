@@ -11,7 +11,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import se330project.Models.workoutModel;
 import se330project.Views.homePageView;
-
+import javafx.scene.control.TextArea;
+import javafx.scene.layout.VBox;
 /**
  *
  * @author jrrou
@@ -158,7 +159,8 @@ public class controller {
     }
     
     public void resetWorkout(homePageView view, workoutModel model, ArrayList<String> BWExercises, ArrayList<String> GymExercises, ArrayList<String> createdWorkout){
-        Label wrkLabel = new Label();
+        TextArea wrkLabel = new TextArea();
+        wrkLabel.setWrapText(true);
         view.getbtnEqpBody().setDisable(false);
         view.getbtnEqpGym().setDisable(false);
         view.getbtnTime20().setDisable(false);

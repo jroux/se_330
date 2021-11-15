@@ -26,6 +26,7 @@ import java.util.Collections;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextArea;
@@ -34,6 +35,10 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.control.PasswordField;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.shape.Rectangle;
 
 /**
  *
@@ -86,22 +91,45 @@ public class Se330Project extends Application {
         PasswordField pwBox = new PasswordField();
         logRoot.add(pwBox, 1, 2);
          
-//-------------------------SETTING UP MAIN SCENE--------------------------------------
+//-------------------------SETTING UP BROWSE SCENE--------------------------------------
         GridPane browseRoot = new GridPane();
-        browseRoot.setAlignment(Pos.CENTER);
+        
+//        ScrollPane s1 = new ScrollPane();
+//        s1.setPrefSize(300, 175);
+//        s1.setContent(browseRoot);
+
+//        ScrollPane scrollPane = new ScrollPane(browseRoot);
+//        scrollPane.setPrefSize(600, 200);
+//        scrollPane.setContent(browseRoot);
+//        scrollPane.setFitToHeight(true);
+//        scrollPane.setFitToWidth(true);
+//        scrollPane.setPannable(true);
+//        scrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
+        
+        //browseRoot.setAlignment(Pos.CENTER);
         browseRoot.setHgap(10);
         browseRoot.setVgap(10);
         browseRoot.setPadding(new Insets(25, 25, 25, 25));
+        //browseRoot.getChildren().addAll(scrollPane);
         browseRoot.add(browseView.getbtnBack(), 0, 0, 1, 1);
+        //browseRoot.getChildren().addAll(scrollPane);
+        //browseRoot.add(scrollPane, 0, 0, 0, 1);
         
- 
+        
+        // Scroll Pane Config
+
+        
+        
+        
+ //-------------------------SETTING UP MAIN SCENE--------------------------------------
         //workout gridpane
         GridPane root = new GridPane();
+        VBox vbox = new VBox(root, wrkLabel);
         root.setAlignment(Pos.CENTER);
         root.setHgap(10);
         root.setVgap(10);
         root.setPadding(new Insets(25, 25, 25, 25));
-        root.add(wrkLabel, 0, 4, 1, 1);
+        //root.add(wrkLabel, 0, 5, 1, 1);
         
         //Adding buttons to gridpane
         root.add(view.getbtnTime20(), 0, 0, 1, 1);
@@ -117,7 +145,10 @@ public class Se330Project extends Application {
         
         //creating scenes
         Scene loginScene = new Scene(logRoot, 400, 275);
-        Scene scene = new Scene(root, 300, 275); //workout scene
+        //loginScene.setBackground(Color.RED);
+        //loginScene.setBackground(new Background(new BackgroundFill(Color.WHITE)));
+        //loginScene.setStyle("-fx-background-color: #FFFFFF;");
+        Scene scene = new Scene(vbox, 300, 275); //workout scene
         Scene browseScene = new Scene(browseRoot, 400, 275);
         primaryStage.setTitle("workIT");
         primaryStage.setScene(loginScene);
