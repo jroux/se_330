@@ -13,9 +13,25 @@ import javafx.scene.control.Button;
  */
 public class browseView {
     Button btnBack = new Button ("Back");
+    Button btnC = new Button ("Cardio");
+    Button btnG = new Button ("Gym Lift");
+    Button btnB = new Button ("Bodyweight Workout");
+    
     
     //Getters for buttons
     public Button getbtnBack() {
         return btnBack;
+    }
+    
+    public Button getbtnC() {
+        return btnC;
+    }
+    
+    public Button getbtnG() {
+        return btnG;
+    }
+    
+    public Button getbtnB() {
+        return btnB;
     }
 }
