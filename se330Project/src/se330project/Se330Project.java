@@ -10,6 +10,7 @@ import se330project.Models.workoutModel;
 import se330project.Views.homePageView;
 import se330project.Views.loginView;
 import Controller.loginController;
+import Controller.browseController;
 import se330project.Views.browseView;
 import Controller.controller;
 import javafx.application.Application;
@@ -50,6 +51,7 @@ public class Se330Project extends Application {
     //Variables
     boolean clickCheck = false; //used to disable buttons
     Label wrkLabel = new Label(); //used to display workout
+
 
     
     @Override
@@ -99,7 +101,7 @@ public class Se330Project extends Application {
         TextArea preRec = new TextArea();
         preRec.setPrefHeight(300);
         preRec.setPrefWidth(190);
-        VBox vb1 = new VBox(browseView.getbtnC(), browseView.getbtnB(), browseView.getbtnG(), browseView.getbtnBack());
+        VBox vb1 = new VBox(browseView.getbtnC(), browseView.getbtnG(), browseView.getbtnB(), browseView.getbtnBack());
         VBox vb2 = new VBox(preRec);
         vb1.setSpacing(50);
         //vb1.setPadding(new Insets(10, 50, 50, 50));
@@ -281,7 +283,7 @@ public class Se330Project extends Application {
         browseView.getbtnC().setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                
+                browseController.cardioPreSet(preRec);
             }
         });
         
@@ -289,17 +291,20 @@ public class Se330Project extends Application {
         browseView.getbtnG().setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                
+                browseController.gymPreSet(preRec);
             }
         });
+       
         
         //Button to view preset bodyweight workouts
         browseView.getbtnB().setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                
+                browseController.bwPreSet(preRec);
             }
         });
+        
+
         
     }
 
