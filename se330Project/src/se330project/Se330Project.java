@@ -134,8 +134,11 @@ public class Se330Project extends Application {
         
  //-------------------------SETTING UP MAIN SCENE--------------------------------------
         //workout gridpane
+        Text hellotitle = new Text("Hello!");
+        hellotitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
         GridPane root = new GridPane();
-        VBox vbox = new VBox(root, wrkLabel);
+        VBox vbox = new VBox(hellotitle, root, wrkLabel);
+        vbox.setPadding(new Insets(20, 20, 20, 20));
         root.setAlignment(Pos.CENTER);
         root.setHgap(10);
         root.setVgap(10);
@@ -159,7 +162,7 @@ public class Se330Project extends Application {
         //loginScene.setBackground(Color.RED);
         //loginScene.setBackground(new Background(new BackgroundFill(Color.WHITE)));
         //loginScene.setStyle("-fx-background-color: #FFFFFF;");
-        Scene scene = new Scene(vbox, 300, 275); //workout scene
+        Scene scene = new Scene(vbox, 300, 300); //workout scene
         Scene browseScene = new Scene(browseRoot, 400, 300);
         primaryStage.setTitle("workIT");
         primaryStage.setScene(loginScene);
