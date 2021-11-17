@@ -15,6 +15,7 @@ import static org.mockito.Mockito.mock;
 import se330project.Se330Project;
 import se330project.Models.workoutModel;
 import se330project.Views.homePageView;
+import java.util.Collections; 
 
 /**
  *
@@ -43,11 +44,39 @@ public class controllerTest {
     @Test
     public void testCreateBWExercises() {
         //testing null case
-        System.out.println("createBWExercises");
+        System.out.println("createBWExercises null case");
         controller instance = new controller();
         ArrayList<String> result = instance.createBWExercises();
         assertNotNull(result);
-
+        
+        //testing length case
+        System.out.println("createBWExercises length case");
+        controller instanceLen = new controller();
+        ArrayList<String> resultLen = instance.createBWExercises();
+        int expectedSize = 15;
+        assertEquals(expectedSize, resultLen.size()); //correct length
+        
+        //testing to ensure it contains the correct exercises
+        System.out.println("createBWExercises contains case");
+        ArrayList<String> BWExercises = new ArrayList<String>(); 
+        BWExercises.add("push ups");
+        BWExercises.add("small arm circles");
+        BWExercises.add("tricep dips");
+        BWExercises.add("plank with shoulder taps");
+        BWExercises.add("bear crawl");
+        BWExercises.add("squats");
+        BWExercises.add("calf raises");
+        BWExercises.add("pulsing squats");
+        BWExercises.add("reverse lunge");
+        BWExercises.add("glute bridges");
+        BWExercises.add("mountain climbers");
+        BWExercises.add("crunches");
+        BWExercises.add("russian twists");
+        BWExercises.add("leg lifts");
+        BWExercises.add("burpees");
+        Collections.sort(BWExercises);
+        Collections.sort(result);
+        assertEquals(BWExercises, result); //array has correct elements
     }
     
      /**
@@ -56,10 +85,35 @@ public class controllerTest {
     @Test
     public void testCreateGymExercises() {
         //testing null case
-        System.out.println("createGymExercises");
+        System.out.println("createGymExercises null case");
         controller instance = new controller();
         ArrayList<String> result = instance.createGymExercises();
         assertNotNull(result);
+        
+        //testing length case
+        System.out.println("createBWExercises length case");
+        controller instanceSize = new controller();
+        ArrayList<String> resultSize = instance.createGymExercises();
+        int expectedResult = 12;
+        assertEquals(expectedResult, resultSize.size()); //correct length
+        
+        System.out.println("createBWExercises contains case");
+        ArrayList<String> GymExercises = new ArrayList<String>(); 
+        GymExercises.add("Pull Ups");
+        GymExercises.add("Bent Over Rows");
+        GymExercises.add("cable pull");
+        GymExercises.add("medicine ball slams");
+        GymExercises.add("arm curls");
+        GymExercises.add("back squat");
+        GymExercises.add("front squat");
+        GymExercises.add("sumo squat");
+        GymExercises.add("box jumps");
+        GymExercises.add("side lunge");
+        GymExercises.add("abs machine");
+        GymExercises.add("leg press");
+        Collections.sort(GymExercises);
+        Collections.sort(result);
+        assertEquals(GymExercises, result); //array has correct elements
 
     }
     
