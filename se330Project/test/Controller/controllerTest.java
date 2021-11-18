@@ -26,7 +26,7 @@ public class controllerTest {
     private homePageView viewMock;
     
     public controllerTest() {
-        modelMock = mock(workoutModel.class);
+        workoutModel modelMock = mock(workoutModel.class);
         viewMock = mock(homePageView.class);
     }
     
@@ -116,22 +116,22 @@ public class controllerTest {
         assertEquals(GymExercises, result); //array has correct elements
 
     }
-    
-    /**
-     * Test of createBWExercises method, of class controller.
-     */
-    @Test
-    public void testCardioWorkout() {
-        //testing null case
-        System.out.println("cardioWorkout");
-        controller instance = new controller();
-        ArrayList<String> createdWorkout = new ArrayList<String>();
-        ArrayList<String> result = instance.cardioWorkout(modelMock, createdWorkout, viewMock);
-        assertNotNull(result);
-        
-        createdWorkout.clear();
-        assertTrue(createdWorkout.isEmpty());
-    }
+//    
+//    /**
+//     * Test of createBWExercises method, of class controller.
+//     */
+//    @Test
+//    public void testCardioWorkout() {
+//        //testing null case
+//        System.out.println("cardioWorkout");
+//        controller instance = new controller();
+//        ArrayList<String> createdWorkout = new ArrayList<String>();
+//        ArrayList<String> result = instance.cardioWorkout(modelMock, createdWorkout, viewMock);
+//        assertNotNull(result);
+//        
+//        createdWorkout.clear();
+//        assertTrue(createdWorkout.isEmpty());
+//    }
     
     /**
      * Test of createBWExercises method, of class controller.
@@ -139,28 +139,57 @@ public class controllerTest {
     @Test
     public void testBodyWeightWorkout() {
         //testing null case
-        System.out.println("bodyWeightWorkout");
+        System.out.println("bodyWeightWorkout null case");
         controller instance = new controller();
+        workoutModel model = new workoutModel();
+        model.setTime(20);
+        model.setWrkTemp(2);
+        model.setEquip(1);
         ArrayList<String> createdWorkout = new ArrayList<String>();
         ArrayList<String> BWExercises = new ArrayList<String>();
-        ArrayList<String> result = instance.bodyWeightWorkout(modelMock, createdWorkout, BWExercises);
+        BWExercises = instance.createBWExercises();
+        ArrayList<String> result = instance.bodyWeightWorkout(model, createdWorkout, BWExercises);
         assertNotNull(result);
+        
+        //testing length case
+        System.out.println("bodyWeightWorkout length case");
+        controller instance1 = new controller();
+        workoutModel model1 = new workoutModel();
+        workoutModel model2 = new workoutModel();
+        model1.setTime(20);
+        model1.setWrkTemp(2);
+        model1.setEquip(1);
+        model2.setTime(40);
+        model2.setWrkTemp(2);
+        model2.setEquip(1);
+        int expectedResult = 5;
+        int expectedResult2 = 10;
+        ArrayList<String> createdWorkout1 = new ArrayList<String>();
+        ArrayList<String> createdWorkout2 = new ArrayList<String>();
+        ArrayList<String> BWExercises1 = new ArrayList<String>();
+        BWExercises1 = instance.createBWExercises();
+        ArrayList<String> result1 = instance.bodyWeightWorkout(model1, createdWorkout1, BWExercises1);
+        ArrayList<String> result2 = instance.bodyWeightWorkout(model2, createdWorkout2, BWExercises1);
+        ArrayList<String> result3 = instance.bodyWeightWorkout(model1, createdWorkout1, BWExercises1);
+        assertEquals(expectedResult, result1.size()); //correct length for time 20
+        assertEquals(expectedResult2, result2.size()); //correct length for time 20
+        assertNotEquals(expectedResult2, result3.size()); // edge case if time and length are incorrect
     }
     
-     /**
-     * Test of createBWExercises method, of class controller.
-     */
-    @Test
-    public void testGymWorkout() {
-        //testing null case
-        System.out.println("gymWorkout");
-        controller instance = new controller();
-        ArrayList<String> createdWorkout = new ArrayList<String>();
-        ArrayList<String> GymExercises = new ArrayList<String>();
-        ArrayList<String> result = instance.gymWorkout(modelMock, createdWorkout, GymExercises);
-        assertNotNull(result);
-    }
-    
+//     /**
+//     * Test of createBWExercises method, of class controller.
+//     */
+//    @Test
+//    public void testGymWorkout() {
+//        //testing null case
+//        System.out.println("gymWorkout");
+//        controller instance = new controller();
+//        ArrayList<String> createdWorkout = new ArrayList<String>();
+//        ArrayList<String> GymExercises = new ArrayList<String>();
+//        ArrayList<String> result = instance.gymWorkout(modelMock, createdWorkout, GymExercises);
+//        assertNotNull(result);
+//    }
+//    
      /**
      * Test of createBWExercises method, of class controller.
      */
@@ -169,12 +198,19 @@ public class controllerTest {
         //testing null case
         System.out.println("setWorkout");
         controller instance = new controller();
+        workoutModel model = new workoutModel();
+        model.setTime(20);
+        model.setWrkTemp(2);
+        model.setEquip(1);
         ArrayList<String> createdWorkout = new ArrayList<String>();
         ArrayList<String> GymExercises = new ArrayList<String>();
+        GymExercises = instance.createGymExercises();
         ArrayList<String> BWExercises = new ArrayList<String>();
-        String result = instance.setWorkout(modelMock, createdWorkout, BWExercises, GymExercises, viewMock);
+        BWExercises = instance.createBWExercises();
+        String result = instance.setWorkout(model, createdWorkout, BWExercises, GymExercises, viewMock);
+        System.out.println(result);
         assertNotNull(result);
     }
-
-    
+//
+//    
 }
