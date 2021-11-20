@@ -24,24 +24,24 @@ public class controller {
     
         public ArrayList<String> createBWExercises(){
         ArrayList<String> BWExercises = new ArrayList<String>(); 
-        BWExercises.add("push ups");
-        BWExercises.add("small arm circles");
-        BWExercises.add("tricep dips");
-        BWExercises.add("plank with shoulder taps");
-        BWExercises.add("bear crawl");
+        BWExercises.add("Push Ups");
+        BWExercises.add("Small Arm Circles");
+        BWExercises.add("Tricep Dips");
+        BWExercises.add("Plank With Shoulder Taps");
+        BWExercises.add("Bear Crawl");
         
         
-        BWExercises.add("squats");
-        BWExercises.add("calf raises");
-        BWExercises.add("pulsing squats");
-        BWExercises.add("reverse lunge");
-        BWExercises.add("glute bridges");
+        BWExercises.add("Squats");
+        BWExercises.add("Calf Raises");
+        BWExercises.add("Pulsing Squats");
+        BWExercises.add("Reverse Lunge");
+        BWExercises.add("Glute Bridges");
         
-        BWExercises.add("mountain climbers");
-        BWExercises.add("crunches");
-        BWExercises.add("russian twists");
-        BWExercises.add("leg lifts");
-        BWExercises.add("burpees");
+        BWExercises.add("Mountain Climbers");
+        BWExercises.add("Crunches");
+        BWExercises.add("Russian Twists");
+        BWExercises.add("Leg Lifts");
+        BWExercises.add("Burpees");
         
         Collections.shuffle(BWExercises); //shuffle for random order
         return BWExercises;
@@ -56,18 +56,18 @@ public class controller {
         ArrayList<String> GymExercises = new ArrayList<String>(); 
         GymExercises.add("Pull Ups");
         GymExercises.add("Bent Over Rows");
-        GymExercises.add("cable pull");
-        GymExercises.add("medicine ball slams");
-        GymExercises.add("arm curls");
+        GymExercises.add("Cable Pull");
+        GymExercises.add("Medicine Ball Slams");
+        GymExercises.add("Arm Curls");
         
-        GymExercises.add("back squat");
-        GymExercises.add("front squat");
-        GymExercises.add("sumo squat");
-        GymExercises.add("box jumps");
-        GymExercises.add("side lunge");
+        GymExercises.add("Back Squat");
+        GymExercises.add("Front Squat");
+        GymExercises.add("Sumo Squat");
+        GymExercises.add("Box Jumps");
+        GymExercises.add("Side Lunge");
         
-        GymExercises.add("abs machine");
-        GymExercises.add("leg press");
+        GymExercises.add("Abs Machine");
+        GymExercises.add("Leg Press");
         
         Collections.shuffle(GymExercises); //shuffle for random order
         return GymExercises;
@@ -191,7 +191,7 @@ public class controller {
                 if (i == 4){
                     System.out.println("old");
                     System.out.println(output);
-                    output += "__________";
+                    output += "______________________________________";
                     output += "\n";
                     output += "x4 ROUNDS! -1 Minute per Exercise";
                     output += "\n"; 
@@ -202,7 +202,7 @@ public class controller {
             }
         }
         if (isCardio == false){
-            output += "__________";
+            output += "______________________________________";
             output += "\n";
             output += "x4 ROUNDS! -1 Minute per Exercise";
             output += "\n"; 

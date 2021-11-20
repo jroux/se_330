@@ -74,26 +74,26 @@ public class Se330Project extends Application {
         //login GridPane 
         GridPane logRoot = new GridPane();
         logRoot.setAlignment(Pos.CENTER);
-        logRoot.setHgap(10);
-        logRoot.setVgap(10);
-        logRoot.setPadding(new Insets(25, 25, 25, 25));
-        logRoot.add(logView.getbtnLogin(), 0, 0, 2, 17);
+        logRoot.setHgap(5);
+        logRoot.setVgap(5);
+        //logRoot.setPadding(new Insets(70, 70, 70, 70));
+        logRoot.add(logView.getbtnLogin(), 0, 5, 2, 17);
         
-        Text scenetitle = new Text("Welcome");
+        Text scenetitle = new Text("Welcome to WorkIT!");
         scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
         logRoot.add(scenetitle, 0, 0, 2, 1);
 
         Label userName = new Label("User Name:");
-        logRoot.add(userName, 0, 1);
+        logRoot.add(userName, 0, 3);
 
         TextField userTextField = new TextField();
-        logRoot.add(userTextField, 1, 1);
+        logRoot.add(userTextField, 1, 3);
 
         Label pw = new Label("Password:");
-        logRoot.add(pw, 0, 2);
+        logRoot.add(pw, 0, 5);
 
         PasswordField pwBox = new PasswordField();
-        logRoot.add(pwBox, 1, 2);
+        logRoot.add(pwBox, 1, 5);
          
 //-------------------------SETTING UP BROWSE SCENE--------------------------------------
         //GridPane browseRoot = new GridPane();
@@ -169,7 +169,7 @@ public class Se330Project extends Application {
         view.getbtnGenerate().setDisable(true);
         
         //creating scenes
-        Scene loginScene = new Scene(logRoot, 400, 275);
+        Scene loginScene = new Scene(logRoot, 520, 350);
         //loginScene.setBackground(Color.RED);
         //loginScene.setBackground(new Background(new BackgroundFill(Color.WHITE)));
         //loginScene.setStyle("-fx-background-color: #FFFFFF;");

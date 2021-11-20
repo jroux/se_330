@@ -23,10 +23,10 @@ public class loginController {
         if (userTextField.getText().isEmpty()){
                     System.out.println("made it");
                     Label noUserName = new Label("Please enter a user name.");
-                    logRoot.add(noUserName, 0, 8);
+                    logRoot.add(noUserName, 0, 20);
                 }else if (pwBox.getText().isEmpty()){
                     Label noPwBox = new Label("Please enter a password.");
-                    logRoot.add(noPwBox, 0, 9);
+                    logRoot.add(noPwBox, 0, 21);
                     System.out.print("You need to enter a password.");
                 }
                 else{
