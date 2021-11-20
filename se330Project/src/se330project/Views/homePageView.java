@@ -50,11 +50,11 @@ public class homePageView{
     Button btnTime40 = new Button("40 Minutes");
     Button btnTypeLift = new Button("Lift");
     Button btnTypeCardio = new Button("Cardio");
-    Button btnEqpBody = new Button("Body weight");
+    Button btnEqpBody = new Button("Body Weight");
     Button btnEqpGym = new Button("Gym");
     Button btnGenerate = new Button ("GO");
     Button btnReset = new Button ("RESET");
-    Button btnBrowse = new Button ("Browse");
+    Button btnBrowse = new Button ("More >>");
     
     //Getters for buttons
     public Button getbtnBrowse() {

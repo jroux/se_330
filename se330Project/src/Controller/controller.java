@@ -218,16 +218,15 @@ public class controller {
         return btn;
     }
     
-    public void resetWorkout(homePageView view, workoutModel model, ArrayList<String> BWExercises, ArrayList<String> GymExercises, ArrayList<String> createdWorkout){
-        TextArea wrkLabel = new TextArea();
-        wrkLabel.setWrapText(true);
+    public void resetWorkout(homePageView view, workoutModel model, ArrayList<String> BWExercises, ArrayList<String> GymExercises, ArrayList<String> createdWorkout, TextArea newArea){
+        newArea.setWrapText(true);
         view.getbtnEqpBody().setDisable(false);
         view.getbtnEqpGym().setDisable(false);
         view.getbtnTime20().setDisable(false);
         view.getbtnTime40().setDisable(false);
         view.getbtnTypeLift().setDisable(false);
         view.getbtnTypeCardio().setDisable(false);
-        wrkLabel.setText("");
+        newArea.setText("");
         model.setTime(0);
         model.setEquip(0);
         model.setWrkTemp(0);

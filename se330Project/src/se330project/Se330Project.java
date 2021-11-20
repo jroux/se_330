@@ -40,6 +40,7 @@ import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.TextAlignment;
 
 
 /**
@@ -134,15 +135,25 @@ public class Se330Project extends Application {
         
  //-------------------------SETTING UP MAIN SCENE--------------------------------------
         //workout gridpane
-        Text hellotitle = new Text("Hello!");
+        TextArea newArea = new TextArea();
+        newArea.setPrefHeight(320);
+        newArea.setPrefWidth(215);
+        Text hellotitle = new Text("Let's Go WorkIT!");
+        Text preferences = new Text("Please select you preferences below.");
         hellotitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
+        preferences.setFont(Font.font("Tahoma", FontWeight.NORMAL, 12));
         GridPane root = new GridPane();
-        VBox vbox = new VBox(hellotitle, root, wrkLabel);
+        VBox vbox = new VBox(hellotitle, preferences, root, view.getbtnBrowse());
+        VBox vboxTwo = new VBox(newArea);
+        vboxTwo.setPadding(new Insets(15, 15, 15, 15));
+        vbox.setSpacing(15);
         vbox.setPadding(new Insets(20, 20, 20, 20));
         root.setAlignment(Pos.CENTER);
+        hellotitle.setTextAlignment(TextAlignment.CENTER);
         root.setHgap(10);
         root.setVgap(10);
         root.setPadding(new Insets(25, 25, 25, 25));
+        HBox hBox = new HBox(vbox, vboxTwo);
         //root.add(wrkLabel, 0, 5, 1, 1);
         
         //Adding buttons to gridpane
@@ -154,7 +165,7 @@ public class Se330Project extends Application {
         root.add(view.getbtnEqpGym(), 0, 2, 1, 1);
         root.add(view.getbtnGenerate(), 0, 3, 1, 1);
         root.add(view.getbtnReset(), 1, 3, 1, 1);
-        root.add(view.getbtnBrowse(), 1, 4, 1, 1);
+        view.getbtnBrowse().setPrefSize(200, 40);
         view.getbtnGenerate().setDisable(true);
         
         //creating scenes
@@ -162,7 +173,7 @@ public class Se330Project extends Application {
         //loginScene.setBackground(Color.RED);
         //loginScene.setBackground(new Background(new BackgroundFill(Color.WHITE)));
         //loginScene.setStyle("-fx-background-color: #FFFFFF;");
-        Scene scene = new Scene(vbox, 300, 300); //workout scene
+        Scene scene = new Scene(hBox, 520, 350); //workout scene
         Scene browseScene = new Scene(browseRoot, 400, 300);
         primaryStage.setTitle("workIT");
         primaryStage.setScene(loginScene);
@@ -240,7 +251,7 @@ public class Se330Project extends Application {
         view.getbtnGenerate().setOnAction(new EventHandler<ActionEvent>() {       
             @Override
             public void handle(ActionEvent event) {
-                wrkLabel.setText(controller.setWorkout(model, createdWorkout, controller.createBWExercises(), controller.createGymExercises(), view));
+                newArea.setText(controller.setWorkout(model, createdWorkout, controller.createBWExercises(), controller.createGymExercises(), view));
                 //this code prevents user from spamming the go button
                 clickCheck = true;
                 controller.disableButton(clickCheck, view.getbtnGenerate());
@@ -252,7 +263,7 @@ public class Se330Project extends Application {
             @Override
             public void handle(ActionEvent event) {
                 controller.disableButton(false, view.getbtnGenerate()); //need to enable go button again
-                controller.resetWorkout(view, model, controller.createBWExercises(), controller.createGymExercises(), createdWorkout);
+                controller.resetWorkout(view, model, controller.createBWExercises(), controller.createGymExercises(), createdWorkout, newArea);
             }
         });
 

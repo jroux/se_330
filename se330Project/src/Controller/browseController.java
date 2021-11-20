@@ -19,6 +19,7 @@ public class browseController {
     
     public static void cooldownSet(TextArea preRec){
         preRec.setText("Jog \n\n Calf Sweeps \n\n Quad Stretch \n\n Side Lunge Stretch \n\n Groin Stretch \n\n Pidgeon Stretch \n\n Child's Pose");
+        
     }
     
     public static void healthyTipsSet(TextArea preRec){

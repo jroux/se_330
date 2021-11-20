@@ -19,6 +19,7 @@ public class loginController {
     
     //This method ensures that a user enters a username and password before they can login
     public void userPassCheck(TextField userTextField, GridPane logRoot, PasswordField pwBox, Stage primaryStage, Scene scene){
+        System.out.println(userTextField);
         if (userTextField.getText().isEmpty()){
                     System.out.println("made it");
                     Label noUserName = new Label("Please enter a user name.");
