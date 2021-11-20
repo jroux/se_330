@@ -15,6 +15,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
+import java.util.Random;
 /**
  *
  * @author jrrou
@@ -73,6 +74,25 @@ public class controller {
         return GymExercises;
     }
     
+    public ArrayList<String> createCardioList20(){
+        ArrayList<String> cardioList = new ArrayList<String>(); 
+        cardioList.add("5 Min Walk \n 5 Min Jog \n 5 min Walk \n 5 Min Jog");
+        cardioList.add("5 Min Walk \n 20 Burpees \n 5 Min Walk \n 20 Burpees \n 5 Min Walk");
+        cardioList.add("5 Min Jog \n 5 Min Walk \n 20 Squats \n 20 Burpees \n 20 Push Ups \n 2 Min Jog");
+        cardioList.add("20 Squats \n 20 Burpees \n 20 Push Ups \n 10 Min Run \n 20 Squats \n 20 Burpees \n 20 Push Ups \n 5 Min Run");
+        Collections.shuffle(cardioList);
+        return cardioList;
+    }
+    
+        public ArrayList<String> createCardioList40(){
+        ArrayList<String> cardioList40 = new ArrayList<String>(); 
+        cardioList40.add("10 Min Walk \n 20 Squats \n 20 Push Ups \n 5 Burpees \n 10 Min Walk \n 20 Squats \n 20 Push Ups \n 5 Burpees");
+        cardioList40.add("5 Min Walk \n 20 Squats \n 20 Push Ups \n 10 Burpees \n 10 Min Jog \n 5 Min Walk \n 20 Squats \n 20 Push Ups \n 10 Burpees \n 5 Min Walk \n 5 Min Jog");
+        cardioList40.add("5 Min Jog \n 20 Squats \n 20 Push Ups \n 20 Burpees \n 10 Min Jog \n 20 Squats \n 20 Push Ups \n 20 Burpees \n 10 Min Jog \n 5 Min Walk \n 20 Squats \n 20 Push Ups \n 20 Burpees");
+        Collections.shuffle(cardioList40);
+        return cardioList40;
+    }
+    
     
  //-----------------------------------METHODS FOR LOGIC------------------------------------------------------
     
@@ -86,17 +106,27 @@ public class controller {
     
     public ArrayList<String> cardioWorkout(workoutModel model, ArrayList<String> createdWorkout, homePageView view){
         String workout = "";
-        if (model.getTime() == 20){   
-            workout = "Go for a 20 minute run outside.";
+        if (model.getTime() == 20){  
+            int index = 0;
+            int numEx = 1;
+            //choose exercises from cardio list
+            while (createdWorkout.size() < numEx){
+                createdWorkout.add(createCardioList20().get(index));
+                index++;
+            }
         }
         if (model.getTime() == 40){
-            workout = "Go for a 40 minute run outside.";
+            int index = 0;
+            int numEx = 1;
+            //choose exercises from cardio list
+            while (createdWorkout.size() < numEx){
+                createdWorkout.add(createCardioList40().get(index));
+                index++;
+            }
         }
-        createdWorkout.add(workout);
         if (model.getTime() != 0 && model.getEquip() != 0 && model.getWrkTemp() != 0){
             view.getbtnGenerate().setDisable(false);
         }
-        System.out.println(createdWorkout);
         return createdWorkout;
     }
     
@@ -147,6 +177,8 @@ public class controller {
     
     public String setWorkout(workoutModel model, ArrayList<String> createdWorkout, ArrayList<String> BWExercises, ArrayList<String> GymExercises, homePageView view){ 
         String output1 = ""; 
+        ArrayList<String> newList = new ArrayList();
+        Random rand = new Random();
         Boolean b40 = true;
         if (model.getTime() == 20){ 
             if (model.getWrkTemp() == 1){ //CARDIO
@@ -168,7 +200,7 @@ public class controller {
             b40 = false;
             if (model.getWrkTemp() == 1){ //CARDIO
                 cardioWorkout(model, createdWorkout, view);
-                output1 = arrayToString(createdWorkout, true, true);
+                output1 = arrayToString(createdWorkout, b40, true);
             }if (model.getWrkTemp() == 2){ //LIFT
                 if (model.getEquip() == 1){//body weight
                     bodyWeightWorkout(model, createdWorkout, BWExercises);
