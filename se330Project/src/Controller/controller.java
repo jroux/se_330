@@ -86,7 +86,7 @@ public class controller {
     
     public ArrayList<String> cardioWorkout(workoutModel model, ArrayList<String> createdWorkout, homePageView view){
         String workout = "";
-        if (model.getTime() == 20){       
+        if (model.getTime() == 20){   
             workout = "Go for a 20 minute run outside.";
         }
         if (model.getTime() == 40){
@@ -96,6 +96,7 @@ public class controller {
         if (model.getTime() != 0 && model.getEquip() != 0 && model.getWrkTemp() != 0){
             view.getbtnGenerate().setDisable(false);
         }
+        System.out.println(createdWorkout);
         return createdWorkout;
     }
     
@@ -150,14 +151,15 @@ public class controller {
         if (model.getTime() == 20){ 
             if (model.getWrkTemp() == 1){ //CARDIO
                 cardioWorkout(model, createdWorkout, view);
+                output1 = arrayToString(createdWorkout, b40, true);
             }
             if (model.getWrkTemp() == 2){ //LIFT
                 if (model.getEquip() == 1){//body weight
                     bodyWeightWorkout(model, createdWorkout, BWExercises);
-                    output1 = arrayToString(createdWorkout, b40);
+                    output1 = arrayToString(createdWorkout, b40, false);
                 }if (model.getEquip() == 2){ //gym
                     gymWorkout(model, createdWorkout, GymExercises);
-                    output1 = arrayToString(createdWorkout, b40);
+                    output1 = arrayToString(createdWorkout, b40, false);
                 }
             }
         }
@@ -166,20 +168,21 @@ public class controller {
             b40 = false;
             if (model.getWrkTemp() == 1){ //CARDIO
                 cardioWorkout(model, createdWorkout, view);
+                output1 = arrayToString(createdWorkout, true, true);
             }if (model.getWrkTemp() == 2){ //LIFT
                 if (model.getEquip() == 1){//body weight
                     bodyWeightWorkout(model, createdWorkout, BWExercises);
-                    output1 = arrayToString(createdWorkout, b40);
+                    output1 = arrayToString(createdWorkout, b40, false);
                 }if (model.getEquip() == 2){ //gym
                     gymWorkout(model, createdWorkout, GymExercises);
-                    output1 = arrayToString(createdWorkout, b40);
+                    output1 = arrayToString(createdWorkout, b40, false);
                 }
             }
         }
         return output1;
     }
     
-    public String arrayToString(ArrayList<String> createdWorkout, Boolean b40){
+    public String arrayToString(ArrayList<String> createdWorkout, Boolean b40, Boolean isCardio){
         String output = "";
         for (int i = 0; i < createdWorkout.size(); i++){
             output += createdWorkout.get(i);
@@ -198,10 +201,12 @@ public class controller {
                 }
             }
         }
-        output += "__________";
-        output += "\n";
-        output += "x4 ROUNDS! -1 Minute per Exercise";
-        output += "\n"; 
+        if (isCardio == false){
+            output += "__________";
+            output += "\n";
+            output += "x4 ROUNDS! -1 Minute per Exercise";
+            output += "\n"; 
+        }
         
         return output;
     }
