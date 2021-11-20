@@ -6,6 +6,7 @@
 package se330project.Views;
 
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 
 /**
  *
@@ -13,9 +14,9 @@ import javafx.scene.control.Button;
  */
 public class browseView {
     Button btnBack = new Button ("Back");
-    Button btnC = new Button ("Cardio");
-    Button btnG = new Button ("Gym Lift");
-    Button btnB = new Button ("Bodyweight Workout");
+    Button btnC = new Button ("Warm up");
+    Button btnG = new Button ("Cool Down");
+    Button btnB = new Button ("Health Tips");
     
     
     //Getters for buttons
@@ -34,4 +35,5 @@ public class browseView {
     public Button getbtnB() {
         return btnB;
     }
+   
 }

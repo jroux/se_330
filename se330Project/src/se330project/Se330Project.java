@@ -286,7 +286,7 @@ public class Se330Project extends Application {
         browseView.getbtnC().setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                browseController.cardioPreSet(preRec);
+                browseController.warmupSet(preRec);
             }
         });
         
@@ -294,7 +294,7 @@ public class Se330Project extends Application {
         browseView.getbtnG().setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                browseController.gymPreSet(preRec);
+                browseController.cooldownSet(preRec);
             }
         });
        
@@ -303,7 +303,7 @@ public class Se330Project extends Application {
         browseView.getbtnB().setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                browseController.bwPreSet(preRec);
+                browseController.healthyTipsSet(preRec);
             }
         });
         
