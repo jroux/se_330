@@ -76,19 +76,19 @@ public class controller {
     
     public ArrayList<String> createCardioList20(){
         ArrayList<String> cardioList = new ArrayList<String>(); 
-        cardioList.add("5 Min Walk \n 5 Min Jog \n 5 min Walk \n 5 Min Jog");
-        cardioList.add("5 Min Walk \n 20 Burpees \n 5 Min Walk \n 20 Burpees \n 5 Min Walk");
-        cardioList.add("5 Min Jog \n 5 Min Walk \n 20 Squats \n 20 Burpees \n 20 Push Ups \n 2 Min Jog");
-        cardioList.add("20 Squats \n 20 Burpees \n 20 Push Ups \n 10 Min Run \n 20 Squats \n 20 Burpees \n 20 Push Ups \n 5 Min Run");
+        cardioList.add(" 5 Min Walk \n 5 Min Jog \n 5 min Walk \n 5 Min Jog");
+        cardioList.add(" 5 Min Walk \n 20 Burpees \n 5 Min Walk \n 20 Burpees \n 5 Min Walk");
+        cardioList.add(" 5 Min Jog \n 5 Min Walk \n 20 Squats \n 20 Burpees \n 20 Push Ups \n 2 Min Jog");
+        cardioList.add(" 20 Squats \n 20 Burpees \n 20 Push Ups \n 10 Min Run \n 20 Squats \n 20 Burpees \n 20 Push Ups \n 5 Min Run");
         Collections.shuffle(cardioList);
         return cardioList;
     }
     
         public ArrayList<String> createCardioList40(){
         ArrayList<String> cardioList40 = new ArrayList<String>(); 
-        cardioList40.add("10 Min Walk \n 20 Squats \n 20 Push Ups \n 5 Burpees \n 10 Min Walk \n 20 Squats \n 20 Push Ups \n 5 Burpees");
-        cardioList40.add("5 Min Walk \n 20 Squats \n 20 Push Ups \n 10 Burpees \n 10 Min Jog \n 5 Min Walk \n 20 Squats \n 20 Push Ups \n 10 Burpees \n 5 Min Walk \n 5 Min Jog");
-        cardioList40.add("5 Min Jog \n 20 Squats \n 20 Push Ups \n 20 Burpees \n 10 Min Jog \n 20 Squats \n 20 Push Ups \n 20 Burpees \n 10 Min Jog \n 5 Min Walk \n 20 Squats \n 20 Push Ups \n 20 Burpees");
+        cardioList40.add(" 10 Min Walk \n 20 Squats \n 20 Push Ups \n 5 Burpees \n 10 Min Walk \n 20 Squats \n 20 Push Ups \n 5 Burpees");
+        cardioList40.add(" 5 Min Walk \n 20 Squats \n 20 Push Ups \n 10 Burpees \n 10 Min Jog \n 5 Min Walk \n 20 Squats \n 20 Push Ups \n 10 Burpees \n 5 Min Walk \n 5 Min Jog");
+        cardioList40.add(" 5 Min Jog \n 20 Squats \n 20 Push Ups \n 20 Burpees \n 10 Min Jog \n 20 Squats \n 20 Push Ups \n 20 Burpees \n 10 Min Jog \n 5 Min Walk \n 20 Squats \n 20 Push Ups \n 20 Burpees");
         Collections.shuffle(cardioList40);
         return cardioList40;
     }
@@ -239,6 +239,7 @@ public class controller {
             output += "x4 ROUNDS! -1 Minute per Exercise";
             output += "\n"; 
         }
+        output = "---------------WORKOUT--------------" + "\n" + output;
         
         return output;
     }

@@ -96,20 +96,33 @@ public class Se330Project extends Application {
         logRoot.add(pwBox, 1, 5);
          
 //-------------------------SETTING UP BROWSE SCENE--------------------------------------
-        //GridPane browseRoot = new GridPane();
+        GridPane browseRootGP = new GridPane();
+
         
         // HBox example
         TextArea preRec = new TextArea();
-        preRec.setPrefHeight(300);
-        preRec.setPrefWidth(190);
-        VBox vb1 = new VBox(browseView.getbtnC(), browseView.getbtnG(), browseView.getbtnB(), browseView.getbtnBack());
+        Text tipsTitle = new Text("Health Tips and Tricks");
+        tipsTitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
+        Text tipsSmall = new Text("Look below for recovery prevention & tip ");    
+        tipsSmall.setFont(Font.font("Tahoma", FontWeight.NORMAL, 12));
+        preRec.setPrefHeight(320);
+        preRec.setPrefWidth(215);
+        VBox vb1 = new VBox(tipsTitle, tipsSmall, browseRootGP, browseView.getbtnBack());
         VBox vb2 = new VBox(preRec);
-        vb1.setSpacing(50);
+        browseRootGP.setAlignment(Pos.CENTER);
+        vb1.setSpacing(15);
         //vb1.setPadding(new Insets(10, 50, 50, 50));
         vb1.setPadding(new Insets(20, 20, 20, 20));
         vb2.setPadding(new Insets(15, 15, 15, 15));
         HBox browseRoot = new HBox(vb1, vb2);
-        browseRoot.setSpacing(10);
+        //browseRoot.setSpacing(50);
+        browseRootGP.add(browseView.getbtnC(), 0, 0, 1, 1);
+        browseRootGP.add(browseView.getbtnG(), 0, 1, 1, 1);
+        browseRootGP.add(browseView.getbtnB(), 0, 2, 1, 1);
+        browseRootGP.setHgap(10);
+        browseRootGP.setVgap(30);
+        browseRootGP.setPadding(new Insets(25, 25, 25, 25));
+        //browseRoot.setPadding(new Insets(25, 25, 25, 25));
 
         
 //        ScrollPane s1 = new ScrollPane();
@@ -174,7 +187,7 @@ public class Se330Project extends Application {
         //loginScene.setBackground(new Background(new BackgroundFill(Color.WHITE)));
         //loginScene.setStyle("-fx-background-color: #FFFFFF;");
         Scene scene = new Scene(hBox, 520, 350); //workout scene
-        Scene browseScene = new Scene(browseRoot, 400, 300);
+        Scene browseScene = new Scene(browseRoot, 520, 350);
         primaryStage.setTitle("workIT");
         primaryStage.setScene(loginScene);
         primaryStage.show();
