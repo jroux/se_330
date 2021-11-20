@@ -117,22 +117,22 @@ public class controllerTest {
         assertEquals(GymExercises, result); //array has correct elements
 
     }
-//    
-//    /**
-//     * Test of createBWExercises method, of class controller.
-//     */
-//    @Test
-//    public void testCardioWorkout() {
-//        //testing null case
-//        System.out.println("cardioWorkout");
-//        controller instance = new controller();
-//        ArrayList<String> createdWorkout = new ArrayList<String>();
-//        ArrayList<String> result = instance.cardioWorkout(modelMock, createdWorkout, viewMock);
-//        assertNotNull(result);
-//        
-//        createdWorkout.clear();
-//        assertTrue(createdWorkout.isEmpty());
-//    }
+    
+    /**
+     * Test of createBWExercises method, of class controller.
+     */
+    @Test
+    public void testCardioWorkout() {
+        //testing null case
+        System.out.println("cardio null case");
+        controller instance = new controller();
+        workoutModel model = new workoutModel();
+        model.setTime(20);
+        model.setWrkTemp(1);
+        ArrayList<String> createdWorkout = new ArrayList<String>();
+        ArrayList<String> result = instance.cardioWorkout(model, createdWorkout, viewMock);
+        assertNotNull(result);
+    }
     
     /**
      * Test of createBWExercises method, of class controller.
@@ -235,8 +235,6 @@ public class controllerTest {
         BWExercises = instance.createBWExercises();
         String result = instance.setWorkout(model, createdWorkout, BWExercises, GymExercises, viewMock);
         assertNotNull(result);
-        
-        //
     }
 
     /**
