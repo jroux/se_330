@@ -194,6 +194,8 @@ public class Se330Project extends Application {
             @Override
             public void handle(ActionEvent event) {
                 model.setTime(20);
+                controller.turnGoOn(model, view);
+                System.out.println("time: " + model.getTime());
                 clickCheck = true;
                 controller.disableButton(clickCheck, view.getbtnTime40());
             }
@@ -204,6 +206,7 @@ public class Se330Project extends Application {
             @Override
             public void handle(ActionEvent event) {
                 model.setTime(40);
+                controller.turnGoOn(model, view);
                 clickCheck = true;
                 controller.disableButton(clickCheck, view.getbtnTime20());
             }
@@ -227,6 +230,7 @@ public class Se330Project extends Application {
             @Override
             public void handle(ActionEvent event) {
                 model.setWrkTemp(2);
+                System.out.println("type: " + model.getWrkTemp());
                 controller.turnGoOn(model, view);
                 clickCheck = true;
                 controller.disableButton(clickCheck, view.getbtnTypeCardio());
@@ -249,6 +253,7 @@ public class Se330Project extends Application {
             @Override
             public void handle(ActionEvent event) {
                 model.setEquip(2);
+                System.out.println("equp: " + model.getEquip());
                 controller.turnGoOn(model, view);
                 clickCheck = true;
                 controller.disableButton(clickCheck, view.getbtnEqpBody());
