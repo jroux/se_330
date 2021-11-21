@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+//Imports and packages
 package Controller;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
@@ -14,18 +15,20 @@ import se330project.Views.browseView;
  *
  * @author jrrou
  */
+//This class stands as the controller for the browse scene (logic)
 public class browseController {
     
-    
+    //Function to set text for cool down text area
     public static void cooldownSet(TextArea preRec){
         preRec.setText("----------COOL DOWN----------\n\n Jog \n\n Calf Sweeps \n\n Quad Stretch \n\n Side Lunge Stretch \n\n Hamstring Stretch \n\n Groin Stretch \n\n Pidgeon Stretch \n\n Child's Pose");
         
     }
-    
+    //Function to set text for healthy tips text area
     public static void healthyTipsSet(TextArea preRec){
         preRec.setText("----------HEALTH TIPS---------- \n \n 1. Drink Lots of Water \n\n 2. Get Sleep \n\n 3. Eat Well Balanced Meals \n\n 4. Make Sure to Stretch \n\n 5. Set Goals \n\n 6. Incorporate Rest Days \n\n 7. Create a Routine \n\n 8. Find Accountability Friends");
     }
 
+    //Function to set text for warmup text area
     public static void warmupSet(TextArea preRec) {
         preRec.setText("------------WARMUP------------ \n\n Jog \n\n Highknees \n\n Butt Kickers \n\n Kareokee \n\n Side Shuffle \n\n Open/Close the Gate \n\n Leg Kicks \n\n Quick Sprint");
     }

@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-//imports and packages
+//Imports and packages
 package se330project;
 import se330project.Models.workoutModel;
 import se330project.Views.homePageView;
@@ -47,18 +47,17 @@ import javafx.scene.text.TextAlignment;
  *
  * @author jrrou
  */
+//This class stands as the application class, setting up the scenes and running main
 public class Se330Project extends Application {
     
     //Variables
     boolean clickCheck = false; //used to disable buttons
     Label wrkLabel = new Label(); //used to display workout
 
-
-    
     @Override
     public void start(Stage primaryStage) {
         
-        //create model, view, and controller
+        //create instances of model, view, and controller
         homePageView view = new homePageView();
         loginView logView = new loginView();
         workoutModel model = new workoutModel();
@@ -66,9 +65,9 @@ public class Se330Project extends Application {
         loginController logController = new loginController();
         browseView browseView = new browseView();
 
-        
-        //New created workout list
+        //New created workout list 
         ArrayList<String> createdWorkout = new ArrayList<String>(); 
+        
         
  //-------------------------SETTING UP LOGIN SCENE--------------------------------------      
         //login GridPane 
@@ -76,100 +75,78 @@ public class Se330Project extends Application {
         logRoot.setAlignment(Pos.CENTER);
         logRoot.setHgap(5);
         logRoot.setVgap(5);
-        //logRoot.setPadding(new Insets(70, 70, 70, 70));
         logRoot.add(logView.getbtnLogin(), 0, 5, 2, 17);
         
+        //Creating labels and texts
         Text scenetitle = new Text("Welcome to WorkIT!");
         scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
-        logRoot.add(scenetitle, 0, 0, 2, 1);
-
         Label userName = new Label("User Name:");
-        logRoot.add(userName, 0, 3);
-
         TextField userTextField = new TextField();
-        logRoot.add(userTextField, 1, 3);
-
         Label pw = new Label("Password:");
-        logRoot.add(pw, 0, 5);
-
         PasswordField pwBox = new PasswordField();
+        
+        //Adding labels, and texts to gridpane
+        logRoot.add(scenetitle, 0, 0, 2, 1);
+        logRoot.add(userName, 0, 3);
+        logRoot.add(userTextField, 1, 3);
+        logRoot.add(pw, 0, 5);
         logRoot.add(pwBox, 1, 5);
          
-//-------------------------SETTING UP BROWSE SCENE--------------------------------------
-        GridPane browseRootGP = new GridPane();
-
         
-        // HBox example
+//-------------------------SETTING UP BROWSE SCENE--------------------------------------
+        //Creating gridpane to organize buttons
+        GridPane browseRootGP = new GridPane();
+        browseRootGP.setAlignment(Pos.CENTER);
+        
+        //Creating text area
         TextArea preRec = new TextArea();
-        Text tipsTitle = new Text("Health Tips and Tricks");
-        tipsTitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
-        Text tipsSmall = new Text("Look below for recovery prevention & tip ");    
-        tipsSmall.setFont(Font.font("Tahoma", FontWeight.NORMAL, 12));
+        preRec.setEditable(false);
         preRec.setPrefHeight(320);
         preRec.setPrefWidth(215);
+        
+        //Creating text titles
+        Text tipsTitle = new Text("Health Tips and Tricks");
+        tipsTitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
+        Text tipsSmall = new Text("Look below for recovery-prevention & tips");  
+        tipsSmall.setFont(Font.font("Tahoma", FontWeight.NORMAL, 12));
+        
+        //Creating Vboxs
         VBox vb1 = new VBox(tipsTitle, tipsSmall, browseRootGP, browseView.getbtnBack());
         VBox vb2 = new VBox(preRec);
-        browseRootGP.setAlignment(Pos.CENTER);
         vb1.setSpacing(15);
-        //vb1.setPadding(new Insets(10, 50, 50, 50));
         vb1.setPadding(new Insets(20, 20, 20, 20));
         vb2.setPadding(new Insets(15, 15, 15, 15));
+        
+        //Creating Hbox
         HBox browseRoot = new HBox(vb1, vb2);
-        //browseRoot.setSpacing(50);
         browseRootGP.add(browseView.getbtnC(), 0, 0, 1, 1);
         browseRootGP.add(browseView.getbtnG(), 0, 1, 1, 1);
         browseRootGP.add(browseView.getbtnB(), 0, 2, 1, 1);
         browseRootGP.setHgap(10);
         browseRootGP.setVgap(30);
         browseRootGP.setPadding(new Insets(25, 25, 25, 25));
-        //browseRoot.setPadding(new Insets(25, 25, 25, 25));
 
-        
-//        ScrollPane s1 = new ScrollPane();
-//        s1.setPrefSize(300, 175);
-//        s1.setContent(browseRoot);
-//        ScrollPane scrollPane = new ScrollPane(browseRoot);
-//        scrollPane.setPrefSize(600, 200);
-//        scrollPane.setContent(browseRoot);
-//        scrollPane.setFitToHeight(true);
-//        scrollPane.setFitToWidth(true);
-//        scrollPane.setPannable(true);
-//        scrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
-        
-//        browseRoot.setAlignment(Pos.CENTER);
-//        browseRoot.setHgap(10);
-//        browseRoot.setVgap(10);
-//        browseRoot.setPadding(new Insets(25, 25, 25, 25));
-//        browseRoot.add(browseView.getbtnBack(), 0, 0, 1, 1);
-
-
-        
-        
         
  //-------------------------SETTING UP MAIN SCENE--------------------------------------
-        //workout gridpane
+        //Creating textarea
         TextArea newArea = new TextArea();
+        newArea.setEditable(false);
         newArea.setPrefHeight(320);
         newArea.setPrefWidth(215);
+        
+        //Creating text labels
         Text hellotitle = new Text("Let's Go WorkIT!");
-        Text preferences = new Text("Please select you preferences below.");
         hellotitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
-        preferences.setFont(Font.font("Tahoma", FontWeight.NORMAL, 12));
-        GridPane root = new GridPane();
-        VBox vbox = new VBox(hellotitle, preferences, root, view.getbtnBrowse());
-        VBox vboxTwo = new VBox(newArea);
-        vboxTwo.setPadding(new Insets(15, 15, 15, 15));
-        vbox.setSpacing(15);
-        vbox.setPadding(new Insets(20, 20, 20, 20));
-        root.setAlignment(Pos.CENTER);
         hellotitle.setTextAlignment(TextAlignment.CENTER);
+        Text preferences = new Text("Please select you preferences below.");
+        preferences.setFont(Font.font("Tahoma", FontWeight.NORMAL, 12));
+        
+        //Creating gridpane to organize buttons
+        GridPane root = new GridPane();
+        root.setAlignment(Pos.CENTER);
         root.setHgap(10);
         root.setVgap(10);
         root.setPadding(new Insets(25, 25, 25, 25));
-        HBox hBox = new HBox(vbox, vboxTwo);
-        //root.add(wrkLabel, 0, 5, 1, 1);
-        
-        //Adding buttons to gridpane
         root.add(view.getbtnTime20(), 0, 0, 1, 1);
         root.add(view.getbtnTime40(), 1, 0, 1, 1);
         root.add(view.getbtnTypeCardio(), 1, 1, 1, 1);  
@@ -178,22 +155,31 @@ public class Se330Project extends Application {
         root.add(view.getbtnEqpGym(), 0, 2, 1, 1);
         root.add(view.getbtnGenerate(), 0, 3, 1, 1);
         root.add(view.getbtnReset(), 1, 3, 1, 1);
+        
+        //Creating Vbox
+        VBox vbox = new VBox(hellotitle, preferences, root, view.getbtnBrowse());
+        VBox vboxTwo = new VBox(newArea);
+        vboxTwo.setPadding(new Insets(15, 15, 15, 15));
+        vbox.setSpacing(15);
+        vbox.setPadding(new Insets(20, 20, 20, 20));
+
+        //Creating Hbox
+        HBox hBox = new HBox(vbox, vboxTwo);
+
+        //Setting browse button size and disabling go button to start
         view.getbtnBrowse().setPrefSize(200, 40);
         view.getbtnGenerate().setDisable(true);
         
-        //creating scenes
-        Scene loginScene = new Scene(logRoot, 520, 350);
-        //loginScene.setBackground(Color.RED);
-        //loginScene.setBackground(new Background(new BackgroundFill(Color.WHITE)));
-        //loginScene.setStyle("-fx-background-color: #FFFFFF;");
-        Scene scene = new Scene(hBox, 520, 350); //workout scene
-        Scene browseScene = new Scene(browseRoot, 520, 350);
+        //Creating scenes
+        Scene loginScene = new Scene(logRoot, 520, 350); //Login scene
+        Scene scene = new Scene(hBox, 520, 350); //Homepage scene
+        Scene browseScene = new Scene(browseRoot, 520, 350); //Browse scene
         primaryStage.setTitle("workIT");
         primaryStage.setScene(loginScene);
         primaryStage.show();
         
         
-//--------------------------BUTTON ON CLICK EVENT-------------------------------------------------
+//--------------------------BUTTON ON CLICK EVENTS-------------------------------------------------
         //Button for 20 minute workout
         view.getbtnTime20().setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -306,7 +292,7 @@ public class Se330Project extends Application {
             }
         });
         
-        //Button to view preset cardio workouts
+        //Button to view preset warmup
         browseView.getbtnC().setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -314,7 +300,7 @@ public class Se330Project extends Application {
             }
         });
         
-        //Button to view preset gym workouts
+        //Button to view preset cool down
         browseView.getbtnG().setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -323,16 +309,13 @@ public class Se330Project extends Application {
         });
        
         
-        //Button to view preset bodyweight workouts
+        //Button to view preset health tips
         browseView.getbtnB().setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 browseController.healthyTipsSet(preRec);
             }
-        });
-        
-
-        
+        });  
     }
 
     /**

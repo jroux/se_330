@@ -3,8 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+//Imports and packages
 package Controller;
-
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -15,6 +15,7 @@ import javafx.scene.Scene;
  *
  * @author jrrou
  */
+//This class stands as the controller for the login scene (logic)
 public class loginController {
     
     //This method ensures that a user enters a username and password before they can login
@@ -29,7 +30,7 @@ public class loginController {
                     logRoot.add(noPwBox, 0, 21);
                     System.out.print("You need to enter a password.");
                 }
-                else{
+                else{ //Switch scenes if both username and password have been entered 
                     primaryStage.setScene(scene);
                     primaryStage.show();
                 }
