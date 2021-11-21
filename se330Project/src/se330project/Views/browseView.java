@@ -3,8 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+//Imports and Packages
 package se330project.Views;
-
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.text.Font;
@@ -14,7 +14,9 @@ import javafx.scene.text.FontWeight;
  *
  * @author jrrou
  */
+//This class stands as the view for the browse scene
 public class browseView {
+    //Creating buttons
     Button btnBack = new Button ("Back");
     Button btnC = new Button ("Warm up");
     Button btnG = new Button ("Cool Down");
@@ -37,5 +39,4 @@ public class browseView {
     public Button getbtnB() {
         return btnB;
     }
-   
 }

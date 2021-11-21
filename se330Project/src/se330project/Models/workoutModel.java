@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-//imports and packages
+//Imports and packages
 package se330project.Models;
 import java.util.ArrayList;
 import se330project.Se330Project;
@@ -13,12 +13,15 @@ import se330project.Se330Project;
  *
 // * @author jrrou
 // */
+//This class stands as the model for the workout
+//A workout is made up of time, equipment used (gym or body weight), and the type (lift or cardio)
 public class workoutModel {
+    //Variables
     int Time = 0;
     int equip = 0;
     int wrkTemp = 0;
     
-    //getters and setters
+    //Getters and setters
     public int getTime(){
         return Time;
     }
@@ -34,7 +37,6 @@ public class workoutModel {
     public void setWrkTemp(int wrkTemp){
         this.wrkTemp = wrkTemp;
     }
-    
     
     public int getEquip(){
         return equip;
