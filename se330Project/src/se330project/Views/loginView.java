@@ -18,6 +18,7 @@ public class loginView {
     
     //Getters for buttons
     public Button getbtnLogin() {
+        btnLogin.setStyle("-fx-background-color: tan; -fx-text-fill: white;"); 
         return btnLogin;
     } 
 }

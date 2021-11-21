@@ -72,6 +72,7 @@ public class Se330Project extends Application {
  //-------------------------SETTING UP LOGIN SCENE--------------------------------------      
         //login GridPane 
         GridPane logRoot = new GridPane();
+        logRoot.setStyle("-fx-background-color: BEIGE;"); 
         logRoot.setAlignment(Pos.CENTER);
         logRoot.setHgap(5);
         logRoot.setVgap(5);
@@ -79,7 +80,7 @@ public class Se330Project extends Application {
         
         //Creating labels and texts
         Text scenetitle = new Text("Welcome to WorkIT!");
-        scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
+        scenetitle.setFont(Font.font("Tahoma", FontWeight.BOLD, 20));
         Label userName = new Label("User Name:");
         TextField userTextField = new TextField();
         Label pw = new Label("Password:");
@@ -96,6 +97,7 @@ public class Se330Project extends Application {
 //-------------------------SETTING UP BROWSE SCENE--------------------------------------
         //Creating gridpane to organize buttons
         GridPane browseRootGP = new GridPane();
+        browseRootGP.setStyle("-fx-background-color: BEIGE;");
         browseRootGP.setAlignment(Pos.CENTER);
         
         //Creating text area
@@ -106,19 +108,22 @@ public class Se330Project extends Application {
         
         //Creating text titles
         Text tipsTitle = new Text("Health Tips and Tricks");
-        tipsTitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
+        tipsTitle.setFont(Font.font("Tahoma", FontWeight.BOLD, 20));
         Text tipsSmall = new Text("Look below for recovery-prevention & tips");  
         tipsSmall.setFont(Font.font("Tahoma", FontWeight.NORMAL, 12));
         
         //Creating Vboxs
         VBox vb1 = new VBox(tipsTitle, tipsSmall, browseRootGP, browseView.getbtnBack());
         VBox vb2 = new VBox(preRec);
+        vb1.setStyle("-fx-background-color: BEIGE;");
+        vb2.setStyle("-fx-background-color: BEIGE;");
         vb1.setSpacing(15);
         vb1.setPadding(new Insets(20, 20, 20, 20));
         vb2.setPadding(new Insets(15, 15, 15, 15));
         
         //Creating Hbox
         HBox browseRoot = new HBox(vb1, vb2);
+        browseRoot.setStyle("-fx-background-color: BEIGE;"); 
         browseRootGP.add(browseView.getbtnC(), 0, 0, 1, 1);
         browseRootGP.add(browseView.getbtnG(), 0, 1, 1, 1);
         browseRootGP.add(browseView.getbtnB(), 0, 2, 1, 1);
@@ -136,13 +141,14 @@ public class Se330Project extends Application {
         
         //Creating text labels
         Text hellotitle = new Text("Let's Go WorkIT!");
-        hellotitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
+        hellotitle.setFont(Font.font("Tahoma", FontWeight.BOLD, 20));
         hellotitle.setTextAlignment(TextAlignment.CENTER);
         Text preferences = new Text("Please select you preferences below.");
         preferences.setFont(Font.font("Tahoma", FontWeight.NORMAL, 12));
         
         //Creating gridpane to organize buttons
         GridPane root = new GridPane();
+        root.setStyle("-fx-background-color: BEIGE;");
         root.setAlignment(Pos.CENTER);
         root.setHgap(10);
         root.setVgap(10);
@@ -159,12 +165,15 @@ public class Se330Project extends Application {
         //Creating Vbox
         VBox vbox = new VBox(hellotitle, preferences, root, view.getbtnBrowse());
         VBox vboxTwo = new VBox(newArea);
+        vbox.setStyle("-fx-background-color: BEIGE;");
+        vboxTwo.setStyle("-fx-background-color: BEIGE;");
         vboxTwo.setPadding(new Insets(15, 15, 15, 15));
         vbox.setSpacing(15);
         vbox.setPadding(new Insets(20, 20, 20, 20));
 
         //Creating Hbox
         HBox hBox = new HBox(vbox, vboxTwo);
+        hBox.setStyle("-fx-background-color: BEIGE;");
 
         //Setting browse button size and disabling go button to start
         view.getbtnBrowse().setPrefSize(200, 40);

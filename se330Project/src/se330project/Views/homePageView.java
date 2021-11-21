@@ -54,37 +54,46 @@ public class homePageView{
     
     //Getters for buttons
     public Button getbtnBrowse() {
+        btnBrowse.setStyle("-fx-background-color: tan; -fx-text-fill: white;"); 
         return btnBrowse;
     }
     public Button getbtnGenerate() {
+        btnGenerate.setStyle("-fx-background-color: tan; -fx-text-fill: white;"); 
         return btnGenerate;
     }
     
     public Button getbtnReset() {
+        btnReset.setStyle("-fx-background-color: tan; -fx-text-fill: white;"); 
         return btnReset;
     }
     
     public Button getbtnTime20() {
+        btnTime20.setStyle("-fx-background-color: tan; -fx-text-fill: white;"); 
         return btnTime20;
     }
     
     public Button getbtnTime40() {
+        btnTime40.setStyle("-fx-background-color: tan; -fx-text-fill: white;"); 
         return btnTime40;
     }
     
     public Button getbtnTypeLift() {
+        btnTypeLift.setStyle("-fx-background-color: tan; -fx-text-fill: white;"); 
         return btnTypeLift;
     }
     
     public Button getbtnTypeCardio() {
+        btnTypeCardio.setStyle("-fx-background-color: tan; -fx-text-fill: white;"); 
         return btnTypeCardio;
     }
     
     public Button getbtnEqpBody() {
+        btnEqpBody.setStyle("-fx-background-color: tan; -fx-text-fill: white;"); 
         return btnEqpBody;
     }
     
     public Button getbtnEqpGym() {
+        btnEqpGym.setStyle("-fx-background-color: tan; -fx-text-fill: white;"); 
         return btnEqpGym;
     }   
 }

@@ -25,18 +25,22 @@ public class browseView {
     
     //Getters for buttons
     public Button getbtnBack() {
+        btnBack.setStyle("-fx-background-color: tan; -fx-text-fill: white;"); 
         return btnBack;
     }
     
     public Button getbtnC() {
+        btnC.setStyle("-fx-background-color: tan; -fx-text-fill: white;"); 
         return btnC;
     }
     
     public Button getbtnG() {
+        btnG.setStyle("-fx-background-color: tan; -fx-text-fill: white;"); 
         return btnG;
     }
     
     public Button getbtnB() {
+        btnB.setStyle("-fx-background-color: tan; -fx-text-fill: white;"); 
         return btnB;
     }
 }
