@@ -194,8 +194,7 @@ public class Se330Project extends Application {
             @Override
             public void handle(ActionEvent event) {
                 model.setTime(20);
-                controller.turnGoOn(model, view);
-                System.out.println("time: " + model.getTime());
+                controller.turnGoOn(model, view); //Turn go button on once all preferences have been selected
                 clickCheck = true;
                 controller.disableButton(clickCheck, view.getbtnTime40());
             }
@@ -206,7 +205,7 @@ public class Se330Project extends Application {
             @Override
             public void handle(ActionEvent event) {
                 model.setTime(40);
-                controller.turnGoOn(model, view);
+                controller.turnGoOn(model, view); //Turn go button on once all preferences have been selected
                 clickCheck = true;
                 controller.disableButton(clickCheck, view.getbtnTime20());
             }
@@ -217,7 +216,7 @@ public class Se330Project extends Application {
             @Override
             public void handle(ActionEvent event) {
                 model.setWrkTemp(1);
-                controller.turnGoOn(model, view);
+                controller.turnGoOn(model, view); //Turn go button on once all preferences have been selected
                 clickCheck = true;
                 controller.disableButton(clickCheck, view.getbtnTypeLift());
                 controller.disableButton(clickCheck, view.getbtnEqpBody());
@@ -230,8 +229,7 @@ public class Se330Project extends Application {
             @Override
             public void handle(ActionEvent event) {
                 model.setWrkTemp(2);
-                System.out.println("type: " + model.getWrkTemp());
-                controller.turnGoOn(model, view);
+                controller.turnGoOn(model, view); //Turn go button on once all preferences have been selected
                 clickCheck = true;
                 controller.disableButton(clickCheck, view.getbtnTypeCardio());
             }
@@ -242,7 +240,7 @@ public class Se330Project extends Application {
             @Override
             public void handle(ActionEvent event) {
                 model.setEquip(1);
-                controller.turnGoOn(model, view);
+                controller.turnGoOn(model, view); //Turn go button on once all preferences have been selected
                 clickCheck = true;
                 controller.disableButton(clickCheck, view.getbtnEqpGym());
             }
@@ -253,8 +251,7 @@ public class Se330Project extends Application {
             @Override
             public void handle(ActionEvent event) {
                 model.setEquip(2);
-                System.out.println("equp: " + model.getEquip());
-                controller.turnGoOn(model, view);
+                controller.turnGoOn(model, view); //Turn go button on once all preferences have been selected
                 clickCheck = true;
                 controller.disableButton(clickCheck, view.getbtnEqpBody());
             }

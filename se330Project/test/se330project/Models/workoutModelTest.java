@@ -3,8 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+//Imports and Packages
 package se330project.Models;
-
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -14,6 +14,7 @@ import static org.junit.Assert.*;
  *
  * @author jrrou
  */
+//Unit testing file that tests the workout model functions
 public class workoutModelTest {
     
     public workoutModelTest() {
@@ -27,26 +28,26 @@ public class workoutModelTest {
     public static void tearDownClass() {
     }
 
+    
     /**
-     * Test of getTime method, of class workoutModel.
+     * Tests getTime method and setTime method, of class workoutModel.
      */
     @Test
     public void testGetSetTime() {
-        System.out.println("getTime");
+        System.out.println("getTime and setTime Test");
         workoutModel instance = new workoutModel();
         int expResult = 20;
         instance.setTime(expResult);
         assertEquals(expResult, instance.getTime());
     }
-
-
-
+    
+    
     /**
-     * Test of getWrkTemp method, of class workoutModel.
+     * Tests getWrkTemp method and setWrkTemp method, of class workoutModel.
      */
     @Test
     public void testGetSetWrkTemp() {
-        System.out.println("getWrkTemp");
+        System.out.println("getWrkTemp and setWrkTemp Test");
         workoutModel instance = new workoutModel();
         int expResult = 1;
         instance.setWrkTemp(expResult);
@@ -55,11 +56,11 @@ public class workoutModelTest {
 
 
     /**
-     * Test of getEquip method, of class workoutModel.
+     * Tests getEquip method and setEquip method, of class workoutModel.
      */
     @Test
     public void testGetSetEquip() {
-        System.out.println("getEquip");
+        System.out.println("getEquip and setEquip Test");
         workoutModel instance = new workoutModel();
         int expResult = 1;
         instance.setEquip(expResult);
